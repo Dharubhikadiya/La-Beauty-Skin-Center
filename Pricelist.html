@@ -1,515 +1,1773 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Updated Google Fonts Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Other CSS imports -->
-    <link rel="stylesheet" href="assets/css/utilities.css">
-    <link rel="stylesheet" href="assets/css/stylesheet.css">
-    <link rel="stylesheet" href="assets/fonts/fonts.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/utilities.css" />
+    <link rel="stylesheet" href="assets/css/stylesheet.css" />
+    <link rel="stylesheet" href="assets/fonts/fonts.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Updated Tailwind Configuration -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                        primary: '#FD9C8A',
-                        secondary: '#FDB0A1',
-                        mainbackground: '#FBFBFB',
-                        background: '#FFF5F4',
-                        gray: '#7F7F7F'
-                    },
-                    fontFamily: {
-                        playfair: ['Playfair Display', 'serif'],
-                        roboto: ['Roboto', 'sans-serif'],
-                        dansing: ['Dancing Script', 'cursive'],
-                        sans: ['IBM Plex Sans', 'sans-serif'],
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+              primary: "#FD9C8A",
+              secondary: "#FDB0A1",
+              mainbackground: "#FBFBFB",
+              background: "#FFF5F4",
+              gray: "#7F7F7F",
             },
-        }
+            fontFamily: {
+              playfair: ["Playfair Display", "serif"],
+              roboto: ["Roboto", "sans-serif"],
+              dansing: ["Dancing Script", "cursive"],
+              sans: ["IBM Plex Sans", "sans-serif"],
+            },
+          },
+        },
+      };
     </script>
 
     <!-- Custom styles to ensure Playfair Display works -->
     <style>
-        .font-playfair {
-            font-family: 'Playfair Display', serif !important;
-        }
+      .font-playfair {
+        font-family: "Playfair Display", serif !important;
+      }
     </style>
-</head>
+  </head>
 
-<body class="bg-mainbackground">
+  <body class="bg-mainbackground">
     <div>
-        <section class="bg-background">
-            <!-- Header -->
-            <header class="bg-background shadow-sm">
-                <div class="container mx-auto flex justify-between items-center p-4">
-                    <img src="assets/images/logo.png" alt="Logo" class="h-12 max-w-[125px]">
-                    <nav class="space-x-4">
-                        <a href="index.html" class="text-[#7F7F7F] hover:text-primary font-normal">Home</a>
-                        <a href="About.html" class="text-[#7F7F7F] hover:text-primary font-normal">About Us</a>
-                        <a href="Services.html" class="text-[#7F7F7F] hover:text-primary font-normal">Services</a>
-                        <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price List</a>
-                        <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly Specials</a>
-                        <a href="Blog.html" class="text-[#7F7F7F] hover:text-primary font-normal">Blog</a>
-                        <a href="#" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
-                    </nav>
-                    <button
-                        class="flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
-                        <div class="bg-secondary py-1 px-3 rounded me-2">
-                            <i class="fa-solid fa-angle-right text-white"></i>
-                        </div>
-                        <span>Online Appointment</span>
-                    </button>
-                </div>
-            </header>
+      <section class="bg-background">
+        <!-- Header -->
+        <header class="bg-background shadow-sm">
+          <div class="container mx-auto flex justify-between items-center p-4">
+            <img
+              src="assets/images/logo.png"
+              alt="Logo"
+              class="h-12 max-w-[125px]"
+            />
+            <nav class="space-x-4">
+              <a
+                href="index.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Home</a
+              >
+              <a
+                href="About.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >About Us</a
+              >
+              <a
+                href="Services.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Services</a
+              >
+              <a
+                href="Pricelist.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Price List</a
+              >
+              <a
+                href="Monthlyspecials.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Monthly Specials</a
+              >
+              <a
+                href="Blog.html"
+                class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Blog</a
+              >
+              <a href="#" class="text-[#7F7F7F] hover:text-primary font-normal"
+                >Contact</a
+              >
+            </nav>
+            <button
+              class="flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300"
+            >
+              <div class="bg-secondary py-1 px-3 rounded me-2">
+                <i class="fa-solid fa-angle-right text-white"></i>
+              </div>
+              <span>Online Appointment</span>
+            </button>
+          </div>
+        </header>
 
-            <!-- Hero Section with fixed Playfair font -->
-            <section class="container mx-auto flex flex-col md:flex-row items-center p-8">
-                <div class="md:w-1/2">
-                    <h1 class="font-playfair font-bold text-gray-800 text-[70px] leading-tight mb-2">
-                        Services
-                    </h1>
-                    <span><img src="assets/images/gradiun line.png" alt=""></span>
-                    <p class="text-gray mt-4 text-[20px]">
-                        It is a long established fact that a reader will be distracted by the readable content of a page
-                        when looking at its
-                        layout.
-                    </p>
-                    <div class="flex space-x-4 mt-8 items-center">
-                        <span>
-                            <img src="assets/images/home.png" alt="" class="w-[22px]">
-                        </span>
-                        <span>
-                            <img src="assets/images/right arrow.png" alt="" class="w-[12px]">
-                        </span>
-                        <span class="font-[500] text-[20px] text-primary">Services</span>
-                    </div>
-                </div>
-                <div class="md:w-1/2 flex items-center justify-center">
-                    <img src="assets/images/services page slider.png" alt="Hero Image" class="w-full max-w-[838px]">
-                </div>
-                <!-- <img src="assets/images/sky.png" alt="" class="z-50 absolute bottom-40"> -->
-            </section>
-
-        </section>
-
-
-        <!-- Laser Procedures Section -->
-        <section class="bg-mainbackground py-16 mb-20">
-            <div class="container mx-auto flex flex-col md:flex-row items-center ">
-                <div class="md:w-1/2 flex items-center justify-center relative">
-                    <img src="assets/images/Procedures1.png" alt="About Us Image" class="w-full max-w-[550px]">
-                    <img src="assets/images/Procedures2.png" alt="About Us Image"
-                        class="w-full max-w-[312px] absolute right-0 -bottom-20">
-                </div>
-                <div class="md:w-1/2 p-8">
-                    <h2 class="font-playfair text-[60px] font-bold text-gray-800">Laser Procedures</h2>
-                    <span><img src="assets/images/gradiun line.png" alt="" class="pb-5"></span>
-
-                    <div class="flex">
-                        <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
-                        <p class="text-gray font-roboto mb-3 flex ps-3 text-[20px]">
-                            The most effective method of removing unwanted hair is laser hair removal treatment. Laser
-                            hair removal is
-                            cost-effective, non-invasive, painless and efficient. Waxing and shaving can cost you
-                            thousands of dollars in the long
-                            run. Nonetheless, problematic hair will not disappear.
-                        </p>
-                    </div>
-                    <div class="flex">
-                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
-                        <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                            We’re here to help break the cycle of hair problems offered by waxing and shaving – LA
-                            Beauty Skin Center offers the
-                            best laser hair removal in Los Angeles.
-                        </p>
-                    </div>
-                </div>
+        <!-- Hero Section with fixed Playfair font -->
+        <section
+          class="container mx-auto flex flex-col md:flex-row items-center p-8"
+        >
+          <div class="md:w-1/2">
+            <h1
+              class="font-playfair font-bold text-gray-800 text-[70px] leading-tight mb-2"
+            >
+              Price List
+            </h1>
+            <span><img src="assets/images/gradiun line.png" alt="" /></span>
+            <p class="text-gray mt-4 text-[20px]">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
+            <div class="flex space-x-4 mt-8 items-center">
+              <span>
+                <img src="assets/images/home.png" alt="" class="w-[22px]" />
+              </span>
+              <span>
+                <img
+                  src="assets/images/right arrow.png"
+                  alt=""
+                  class="w-[12px]"
+                />
+              </span>
+              <span class="font-[500] text-[20px] text-primary"
+                >Price List</span
+              >
             </div>
+          </div>
+          <div class="md:w-1/2 flex items-center justify-center">
+            <img
+              src="assets/images/pricelist page slider.png"
+              alt="Hero Image"
+              class="w-full max-w-[1013px]"
+            />
+          </div>
+          <!-- <img src="assets/images/sky.png" alt="" class="z-50 absolute bottom-40"> -->
         </section>
+      </section>
 
-        <!-- Skin Treatment Section -->
-        <section class="bg-background py-16">
-            <div class="container mx-auto text-center">
-                <h2 class="font-playfair text-[40px] font-bold text-gray-800">Laser Procedures And Skin Treatment
+      <!-- Laser Procedures Section -->
+      <section class="bg-mainbackground py-16 mb-20">
+        <div
+          class="container mx-auto bg-background rounded-3xl flex flex-col md:flex-row items-center p-4"
+        >
+          <div class="grid-cols-4 flex items-center justify-center">
+            <img
+              src="assets/images/pricelist second sec.png"
+              alt="About Us Image"
+              class="max-w-[533px]"
+              style="margin-bottom: -130px"
+            />
+          </div>
+          <div class="grid-cols-8 p-8">
+            <h2
+              class="font-playfair text-[43px] font-bold text-gray-800 mb-4 mt-4"
+            >
+              Affordable Prices For Transformative Aesthetic Treatments
+            </h2>
+
+            <div class="flex">
+              <span>
+                <img
+                  src="assets/images/Right Icon.png"
+                  class="max-w-[30px] mt-1"
+              /></span>
+              <p class="text-gray font-roboto mb-3 flex ps-3 text-[20px]">
+                LA Beauty Skin Center offers state-of-the-art treatments like
+                laser hair removal, facial sculpting with dermal fillers, body
+                sculpting with Coolsculpting, non-surgical rhinoplasty and lip
+                augmentation, rejuvenating facials, chemical peels, anti-aging
+                wrinkle prevention treatment with Botox and other
+                neuromodulators, all at affordable prices. Located in Glendale
+                and Toluca Lake, we believe that everyone should have access to
+                the best treatments modern aesthetic medicine can offer so that
+                they can look their best and feel confident.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skin Treatment Section -->
+      <section class="py-10">
+        <div class="container mx-auto text-center">
+          <h2
+            class="font-playfair text-[40px] font-bold text-gray-800 text-left"
+          >
+            Laser Procedures And Skin Treatment
+          </h2>
+          <span class="flex items-start justify-start"
+            ><img
+              src="assets/images/big gradiun line.png"
+              alt=""
+              class="pb-5 pt-3"
+          /></span>
+          <div class="flex">
+            <span>
+              <img src="assets/images/Right Icon.png" class="max-w-[30px]"
+            /></span>
+            <p
+              class="text-gray font-roboto mb-3 flex text-[20px] ps-3 text-left"
+            >
+              Choose from a range of different treatments for both men and
+              women. From full face to specific areas, you can finally afford to
+              tackle those problem areas that make you feel less than stellar.
+              Men and women alike deserve to feel confident in the skin they’re
+              in. That’s why our med spa menu includes affordable monthly
+              packages that include five sessions per month. The prices at LA
+              Beauty Skin Center are some of the best in the business.
+            </p>
+          </div>
+        </div>
+
+        <div class="container mx-auto">
+          <!-- Pricing Section -->
+          <div class="py-10">
+            <!-- Face Section -->
+            <div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-1"
+              >
+                <h2 class="text-[32px] md:text-[32px] font-[700] font-playfair">
+                  Laser Hair Removal Prices
                 </h2>
-                <span class="flex items-center justify-center"><img src="assets/images/big gradiun line.png" alt=""
-                        class="pb-5 pt-3" style="padding-left: 345px;"></span>
-                <div class="flex">
-                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                    <p class="text-gray font-roboto mb-3 flex text-[20px] ps-3 text-left">
-                        LA Beauty Skin Center is a professional laser med spa that offers affordable laser procedures
-                        for hair removal, skin
-                        tightening, vein treatment, sun spots, and more. Cosmetic laser treatments are a proven
-                        effective method for reducing
-                        unwanted hair, removing unsightly veins, and reducing the look of sun spots and age spots. A
-                        quick and straightforward
-                        procedure, you’ll notice results after one visit. Save your money from waxing and shaving and
-                        start showing off your
-                        beautiful body with laser skin treatments.
-                    </p>
-                </div>
-                <div class="flex">
-                    <div class="md:w-1/2   gap-0">
-                        <img src="assets/images/Treatment1.png" alt="" class="max-w-[705px]">
-                    </div>
-                    <div class="md:w-1/2  gap-0">
-                        <img src="assets/images/Treatment2.png" alt="" class="max-w-[705px]">
-                    </div>
-                </div>
+                <i class="fa-solid fa-angle-up text-3xl text-primary"></i>
+              </button>
+
+              <!-- Face Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        FACE
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Lip
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $10
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $15
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Chin
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $10
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $15
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Partial face
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $35
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $140
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full face
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $30
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $120
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Hair line
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $25
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $30
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $100
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $120
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Ears
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $15
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $15
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Arms Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        ARMS
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full arms
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $95
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $320
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $380
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Half arms
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $50
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $200
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Under arms
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $22
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $88
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Hands and fingers
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Fingers only
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $10
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $10
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Bikini Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        BIKINI
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full bikini
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $38
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $75
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $152
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $300
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Half bikini
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $35
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $140
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Partial bikini
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $30
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $50
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $120
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $200
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Buttocks
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $35
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $140
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Legs Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        LEGS
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full legs
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $150
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $170
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $600
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $680
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Upper legs
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $85
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $100
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $340
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $400
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Lower legs
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $75
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $95
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $300
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $380
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Feet and/or toes
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $25
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $25
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $100
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $100
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- chest Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        CHEST AND ABDOMEN
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Upper chest
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $320
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Partial chest
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full abdomen
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $75
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $300
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Lower abdomen
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $20
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $40
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $80
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- back Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        BACK
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Full back
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $35
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $155
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $160
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $320
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Lower back
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $18
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $35
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        --
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        --
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        Upper back
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $78
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        --
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        --
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Touch Pricing Table -->
+              <div
+                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
+              >
+                <table class="w-full min-w-[600px]">
+                  <thead>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <th
+                        class="text-left py-3 px-4 text-[32px] font-playfair font-[700]"
+                      >
+                        TOUCH UP
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Female
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Male
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 F
+                      </th>
+                      <th
+                        class="text-right py-3 px-4 text-[24px] font-playfair font-[600]"
+                      >
+                        Package of 5 M
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        5 minutes
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $30
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $30
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $120
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $320
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        10 minutes
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $60
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $240
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $240
+                      </td>
+                    </tr>
+                    <tr class="border-b border-[#EAEAEA]">
+                      <td class="py-3 px-4 text-[24px] font-roboto font-[500]">
+                        15 minutes
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-12 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $90
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-7 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $90
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $360
+                      </td>
+                      <td
+                        class="text-right py-3 px-4 pe-32 text-[24px] font-[400] font-roboto text-gray"
+                      >
+                        $360
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    LASER VEIN TREATMENTS
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    INJECTABLES PRICES
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    SCULPTRA FOR FACE
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    SCULPTRA BUTT LIFT
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    RADIESSE BUTT (PER VIAL)
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    THREAD LIFT
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    SUN SPOT REMOVAL
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    COOLSCULPTING PRICES
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    COOLTONE
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    PRP (PLATELET RICH PLASMA)
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    LUMECCA IPL
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    MORPHEUS8
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    FORMA
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    PEELS
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    FACIALS
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    PICOSURE PRO SKIN REJUVANATION
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+
+                <button
+                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
+                >
+                  <h2
+                    class="text-[32px] md:text-[32px] font-[700] font-playfair"
+                  >
+                    TATTOO REMOVAL PRICE LIST
+                  </h2>
+                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+                </button>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-
-        <!-- injectors Section -->
-        <section class="py-16">
-            <div class="container mx-auto">
-                <div class="grid gap-8 items-center">
-                    <div class="space-y-6 bg-white shadow-lg p-8 rounded-2xl">
-                        <h2 class="font-playfair text-[60px] font-bold text-gray-800 text-center">Laser Procedure For
-                            Veins</h2>
-                        <span><img src="assets/images/gradiun line.png" alt="" class="pb-2"
-                                style="padding-left: 375px;"></span>
-                        <div class="space-y-3">
-                            <p class="text-gray-600">
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                                <p class="text-gray font-roboto ps-3 flex text-[20px]">
-                                    The most effective method of removing unwanted hair is laser hair removal treatment.
-                                    Laser hair removal is
-                                    cost-effective, non-invasive, painless and efficient. Waxing and shaving can cost
-                                    you thousands of dollars in the long
-                                    run. Nonetheless, problematic hair will not disappear.
-                                </p>
-                            </div>
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                                <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
-                                    We’re here to help break the cycle of hair problems offered by waxing and shaving –
-                                    LA Beauty Skin Center offers the
-                                    best laser hair removal in Los Angeles.
-                                </p>
-                            </div>
-                            </p>
-                        </div>
-                    </div>
+      <!-- Contact Section -->
+      <section class="py-16 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <!-- Form Column -->
+          <div class="bg-white p-8 rounded-xl shadow-lg">
+            <form class="space-y-6">
+              <div class="grid grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  placeholder="First Name"
+                  class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]"
+                />
+                <input
+                  type="text"
+                  placeholder="Last Name"
+                  class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]"
+                />
+              </div>
+              <input
+                type="email"
+                placeholder="Email"
+                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
+              />
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
+              />
+              <textarea
+                placeholder="Inquiry"
+                rows="4"
+                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
+              ></textarea>
+              <div class="flex mb-9">
+                <div
+                  class="flex items-center gap-2 border rounded-xl shadow-lg border-[#EAEAEA] p-4 px-9"
+                >
+                  <input type="checkbox" id="human" class="rounded" />
+                  <label
+                    for="human"
+                    class="text-[16px] font-[400] text-gray font-roboto"
+                    >I am human</label
+                  >
+                  <img
+                    src="assets/images/i-am-human.png"
+                    alt=""
+                    class="ms-20"
+                  />
                 </div>
-
+              </div>
+              <!-- Placeholder for reCAPTCHA -->
+              <button
+                class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300"
+              >
+                <div class="bg-secondary py-1 px-3 rounded me-2">
+                  <i class="fa-solid fa-angle-right text-white"></i>
+                </div>
+                <span class="text-[18px] font-roboto">Submit</span>
+              </button>
+            </form>
+          </div>
+          <!-- Content Column -->
+          <div class="space-y-6">
+            <h2 class="text-[60px] font-playfair font-bold text-gray-800">
+              Contact LA Beauty Skin Center
+            </h2>
+            <span
+              ><img src="assets/images/gradiun line.png" alt="" class="mt-3"
+            /></span>
+            <span><img src="assets/images/" alt="" /></span>
+            <div class="flex mt-0">
+              <span>
+                <img src="assets/images/Right Icon.png" class="max-w-[30px]"
+              /></span>
+              <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                We look forward to hearing from you and helping you achieve your
+                beauty goals! You can reach us at the form below or by calling
+                us at 818-888-0001. You may also email us at
+                Info@LABeautyskincenter.com
+              </p>
             </div>
-        </section>
-
-        <!-- Skin care Section -->
-        <section class="bg-background py-16">
-            <div class="container mx-auto">
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="space-y-6">
-                        <h1 class="text-[60px] font-playfair font-bold text-gray-800">
-                            Laser Procedure For Skin Tightening
-                        </h1>
-                        <span><img src="assets/images/gradiun line.png" alt=""></span>
-                        <div class="space-y-4">
-                            <p class="text-gray-600">
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
-                                <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                                    As you age, collagen production in your body starts to slow, and your skin begins to
-                                    sag and loosen. It is most
-                                    noticeable on your face, neck, and jawline. With laser skin tightening, you can
-                                    effectively reduce skin laxity and
-                                    achieve a more attractive facial contour. Restore your natural beauty with laser
-                                    treatments enabling you to look younger
-                                    for years to come.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl flex items-center justify-center">
-                        <img src="assets/images/Tightening2.png" alt="Professional performing facial treatment"
-                            class="max-w-[550px] h-[496px] object-cover" />
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 flex items-center justify-center">
-                    <div class="flex items-center justify-center my-2 relative">
-                        <img src="assets/images/Tightening1.png" alt="" class="max-w-[670px] h-[736px] object-cover">
-                    </div>
-                    <div class="space-y-6">
-                        <h1 class="text-[60px] font-playfair font-bold text-gray-800">
-                            Laser Procedure For Sunspots
-                        </h1>
-                        <span><img src="assets/images/gradiun line.png" alt=""></span>
-                        <div class="space-y-4">
-                            <p class="text-gray-600">
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
-                                <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                                    We live in one of the sunniest states. Sun exposure has numerous benefits, but it
-                                    has some adverse effects as well. One
-                                    of them is the skin damage. Prolonged exposure to the sun can significantly reduce
-                                    the amount of collagen in the skin,
-                                    resulting in more pronounced wrinkles as skin loses tightness and elasticity. Other
-                                    symptoms of sun damage include
-                                    inflammation and hyperpigmentation. Sun spots, the little brown spots that can
-                                    appear on the skin known, are a direct
-                                    result of sun damage and can be removed with the use of state-of-the-art laser
-                                    technology at LA Beauty Skin Center. Our
-                                    laser treatments destroy the cells that generate the extra pigment. The treatment of
-                                    sunspots is proven to be
-                                    efficacious in creating an even-toned, youthful appearance of your skin. However, we
-                                    also recommend you start wearing
-                                    sunscreen to prevent more sunspots from appearing.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <div class="space-y-6">
-                        <h1 class="text-[24px] font-[700] mb-2 font-playfair font-bold text-gray-800">
-                            Why LA Beauty Skin Center?
-                        </h1>
-                        <span><img src="assets/images/gradiun line.png" alt=""></span>
-                        <div class="space-y-4">
-                            <p class="text-gray-600">
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                                <p class="text-gray font-roboto mb-1 flex ps-3 text-[20px]">
-                                    Although there are a lot of medical spas in Los Angeles, we’re the one for you. We
-                                    are an institution headed by
-                                    internationally renowned Dr. Arman Karapetyan and his team of highly trained
-                                    professionals who help bring your aesthetic
-                                    desires to life. Using state-of-the-art technology to efficiently administer your
-                                    cosmetic laser skin treatments, we
-                                    strive to give you back the confidence you deserve. Our affordable laser procedures
-                                    have many different pricing options,
-                                    packages, and more so that you can afford to look and feel the way you want to.
-                                </p>
-                            </div>
-                            <div class="flex">
-                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                                <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                                    Bring back your natural beauty with LA Beauty Skin Center. We believe that the
-                                    achievements of modern aesthetic medicine
-                                    should be accessible to everyone. Discover your new favorite laser med spa in Los
-                                    Angeles today.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl flex items-center justify-center">
-                        <img src="assets/images/Tightening3.png" alt="Professional performing facial treatment"
-                            class="max-w-[550px] h-[706px] object-cover" />
-                    </div>
-                </div>
+            <div class="flex">
+              <p>
+                <img
+                  src="assets/images/Right Icon.png"
+                  class="max-w-[30px] mt-1"
+                />
+              </p>
+              <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
+                Aenean pulvinar laoreet tellus ut tincidunt. Praesent a lectus
+                egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
+                velit. Pellentesque habitant morbi Vestibulum mattis gravida
+                odio tristique.Aenean pulvinar laoreet tellus ut tincidunt.
+                Praesent a lectus egestas, finibus enim sit amet, mollis lorem.
+                Sed a volutpat velit. Pellentesque habitant morbi Vestibulum
+                mattis gravida odio tristique.
+              </p>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <!-- Contact Section -->
-        <section class="py-16 px-4 md:px-8">
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
-                <!-- Form Column -->
-                <div class="bg-white p-8 rounded-xl shadow-lg">
-                    <form class="space-y-6">
-                        <div class="grid grid-cols-2 gap-4">
-                            <input type="text" placeholder="First Name"
-                                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]">
-                            <input type="text" placeholder="Last Name"
-                                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]">
-                        </div>
-                        <input type="email" placeholder="Email"
-                            class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]">
-                        <input type="tel" placeholder="Phone Number"
-                            class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]">
-                        <textarea placeholder="Inquiry" rows="4"
-                            class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"></textarea>
-                        <div class="flex mb-9">
-                            <div class="flex items-center gap-2 border rounded-xl shadow-lg border-[#EAEAEA] p-4 px-9">
-                                <input type="checkbox" id="human" class="rounded">
-                                <label for="human" class="text-[16px] font-[400] text-gray font-roboto">I am
-                                    human</label>
-                                <img src="assets/images/i-am-human.png" alt="" class="ms-20">
-                            </div>
-                        </div>
-                        <!-- Placeholder for reCAPTCHA -->
-                        <button
-                            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300">
-                            <div class="bg-secondary px-3 rounded me-2">
-                                <i class="fa-solid fa-angle-right text-white"></i>
-                            </div>
-                            <span class="text-[18px] font-roboto">Submit</span>
-                        </button>
-                    </form>
-                </div>
-                <!-- Content Column -->
-                <div class="space-y-6">
-                    <h2 class="text-[60px] font-playfair font-bold text-gray-800">
-                        Contact LA Beauty Skin Center
-                    </h2>
-                    <span><img src="assets/images/gradiun line.png" alt="" class="mt-3"></span>
-                    <span><img src="assets/images/" alt=""></span>
-                    <div class="flex mt-0">
-                        <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                        <p class="text-gray font-roboto flex ps-3 text-[20px]">
-                            We look forward to hearing from you and helping you achieve your beauty goals! You can reach
-                            us at
-                            the
-                            form below or by
-                            calling us at 818-888-0001. You may also email us at Info@LABeautyskincenter.com
-                        </p>
-                    </div>
-                    <div class="flex">
-                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
-                        <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                            Aenean pulvinar laoreet tellus ut tincidunt. Praesent a lectus egestas, finibus enim sit
-                            amet,
-                            mollis
-                            lorem. Sed a
-                            volutpat velit. Pellentesque habitant morbi Vestibulum mattis gravida odio tristique.Aenean
-                            pulvinar
-                            laoreet tellus ut
-                            tincidunt. Praesent a lectus egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
-                            velit.
-                            Pellentesque habitant
-                            morbi Vestibulum mattis gravida odio tristique.
-                        </p>
-                    </div>
-                </div>
+      <!-- Footer Section -->
+      <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
+        <div class="max-w-7xl mx-auto space-y-12">
+          <!-- Logo and Description -->
+          <div class="text-center">
+            <img
+              src="assets/images/footer logo top.png"
+              alt="LA Beauty Skin Center"
+              class="mx-auto"
+              style="width: 110px; height: 116px"
+            />
+            <img
+              src="assets/images/footer logo bottom.png"
+              alt="LA Beauty Skin Center"
+              class="mx-auto"
+              style="width: 261px; height: 57px"
+            />
+            <p class="text-gray mx-auto text-[20px] pt-6">
+              Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus
+              egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
+              <br />
+              velit pellet habitant tristique.
+            </p>
+          </div>
+
+          <!-- Footer Grid -->
+          <div class="grid md:grid-cols-4 gap-8">
+            <!-- Newsletter -->
+            <div class="space-y-4">
+              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+                Newsletter
+              </h3>
+              <span
+                ><img src="assets/images/footer line.png" alt="" class="mt-2"
+              /></span>
+              <p class="text-[20px] text-gray">Newsletter Sign Up</p>
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Email Address"
+                  class="text-[14px] ps-3 rounded-lg"
+                />
+                <button
+                  class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300"
+                >
+                  <div class="bg-secondary px-2 me-1 rounded">
+                    <i class="fa-solid fa-angle-right text-white"></i>
+                  </div>
+                  <span class="text-[14px] font-roboto font-normal"
+                    >Sign Up</span
+                  >
+                </button>
+              </div>
             </div>
-        </section>
 
-
-        <!-- Footer Section -->
-        <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
-            <div class="max-w-7xl mx-auto space-y-12">
-                <!-- Logo and Description -->
-                <div class="text-center">
-                    <img src="assets/images/footer logo top.png" alt="LA Beauty Skin Center" class="mx-auto"
-                        style="width: 110px; height: 116px;">
-                    <img src="assets/images/footer logo bottom.png" alt="LA Beauty Skin Center" class="mx-auto"
-                        style="width: 261px; height: 57px;">
-                    <p class="text-gray mx-auto text-[20px] pt-6">
-                        Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus egestas, finibus enim sit amet,
-                        mollis lorem. Sed
-                        a volutpat <br>
-                        velit pellet habitant tristique.
-                    </p>
-                </div>
-
-                <!-- Footer Grid -->
-                <div class="grid md:grid-cols-4 gap-8">
-                    <!-- Newsletter -->
-                    <div class="space-y-4">
-                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Newsletter</h3>
-                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
-                        <p class="text-[20px] text-gray">Newsletter Sign Up</p>
-                        <div class="flex">
-                            <input type="email" placeholder="Email Address" class="text-[14px] ps-3 rounded-lg">
-                            <button
-                                class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300">
-                                <div class="bg-secondary px-2 me-1 rounded">
-                                    <i class="fa-solid fa-angle-right text-white"></i>
-                                </div>
-                                <span class="text-[14px] font-roboto font-normal">Sign Up</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Quick Links -->
-                    <div class="space-y-4">
-                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Quick Links</h3>
-                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">About Us</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Contact</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Sitemap</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Privacy Policy</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Accessibility
-                                    Statement</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Popular Services -->
-                    <div class="space-y-4">
-                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Popular Services</h3>
-                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Laser Hair Removal</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Lip Augmentation</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Non-Surgical Rhinoplasty</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Jaw Line Shaping</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Cheek Augmentation/Shaping</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Double Chin Treatment</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Liquid Facelift</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">CoolSculpting</a></li>
-                            <li><a href="#" class="text-gray text-[18px] font-[400]">Morpheus8 Skin Resurfacing</a></li>
-                        </ul>
-                    </div>
-
-                    <!-- Follow Us -->
-                    <div class="space-y-4">
-                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Follow Us</h3>
-                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
-                        <div class="flex gap-2 items-center">
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <i class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <i class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <i class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <i class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <i class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"></i>
-                            </a>
-                            <a href="#"
-                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                                <img src="assets/images/fan.png" alt="" class="w-4 flex items-center justify-center">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Copyright -->
-                <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
-                    <p class="text-[20px] text-gray">Copyright © LA Beauty Skin Center</p>
-                </div>
+            <!-- Quick Links -->
+            <div class="space-y-4">
+              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+                Quick Links
+              </h3>
+              <span
+                ><img src="assets/images/footer line.png" alt="" class="mt-2"
+              /></span>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >About Us</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Contact</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Sitemap</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Accessibility Statement</a
+                  >
+                </li>
+              </ul>
             </div>
-        </footer>
+
+            <!-- Popular Services -->
+            <div class="space-y-4">
+              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+                Popular Services
+              </h3>
+              <span
+                ><img src="assets/images/footer line.png" alt="" class="mt-2"
+              /></span>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Laser Hair Removal</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Lip Augmentation</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Non-Surgical Rhinoplasty</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Jaw Line Shaping</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Cheek Augmentation/Shaping</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Double Chin Treatment</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Liquid Facelift</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >CoolSculpting</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="text-gray text-[18px] font-[400]"
+                    >Morpheus8 Skin Resurfacing</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Follow Us -->
+            <div class="space-y-4">
+              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+                Follow Us
+              </h3>
+              <span
+                ><img src="assets/images/footer line.png" alt="" class="mt-2"
+              /></span>
+              <div class="flex gap-2 items-center">
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"
+                  ></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"
+                  ></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"
+                  ></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"
+                  ></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <i
+                    class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"
+                  ></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="assets/images/fan.png"
+                    alt=""
+                    class="w-4 flex items-center justify-center"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Copyright -->
+          <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
+            <p class="text-[20px] text-gray">
+              Copyright © LA Beauty Skin Center
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
-</body>
-
+  </body>
 </html>

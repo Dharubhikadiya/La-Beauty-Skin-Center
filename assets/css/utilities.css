@@ -19,11 +19,6 @@ a {
     text-decoration: none;
 }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-}
-
 
 .justify-content-end {
     justify-content: end;
