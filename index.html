@@ -1,0 +1,911 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Updated Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- Other CSS imports -->
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <!-- <link rel="stylesheet" href="assets/css/stylesheet.css"> -->
+  <!-- <link rel="stylesheet" href="assets/fonts/fonts.css"> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Updated Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            primary: '#FD9C8A',
+            secondary: '#FDB0A1',
+            mainbackground: '#FBFBFB',
+            background: '#FFF5F4',
+            gray: '#7F7F7F'
+          },
+          fontFamily: {
+            playfair: ['Playfair Display', 'serif'],
+            roboto: ['Roboto', 'sans-serif'],
+            sans: ['IBM Plex Sans', 'sans-serif'],
+          },
+        },
+        plugins: [
+          function ({ addUtilities }) {
+            addUtilities({
+              '.scrollbar-hidden': {
+                '-ms-overflow-style': 'none', /* Hide scrollbar in IE and Edge */
+                'scrollbar-width': 'none', /* Hide scrollbar in Firefox */
+              },
+              '.scrollbar-hidden::-webkit-scrollbar': {
+                display: 'none', /* Hide scrollbar in WebKit browsers */
+              },
+            });
+          },
+        ],
+      },
+    }
+  </script>
+
+  <!-- Custom styles to ensure Playfair Display works -->
+  <style>
+    .font-playfair {
+      font-family: 'Playfair Display', serif !important;
+    }
+  </style>
+</head>
+
+<body class="bg-mainbackground">
+  <div>
+    <div class="overflow-hidden">
+      <section class="relative bg-cover bg-center bg-no-repeat"
+        style="background-image: url('assets/images/background-img-main.png');">
+        <!-- Header -->
+        <header class="shadow-sm">
+          <div class="container mx-auto flex justify-between items-center p-4">
+            <img src="assets/images/logo.png" alt="Logo" class="h-12 max-w-[125px]">
+            <nav class="hidden lg:flex space-x-4">
+              <a href="index.html" class="text-[#7F7F7F] hover:text-primary font-normal">Home</a>
+              <a href="About.html" class="text-[#7F7F7F] hover:text-primary font-normal">About Us</a>
+              <a href="Services.html" class="text-[#7F7F7F] hover:text-primary font-normal">Services</a>
+              <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price List</a>
+              <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly Specials</a>
+              <a href="Blog.html" class="text-[#7F7F7F] hover:text-primary font-normal">Blog</a>
+              <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
+            </nav>
+            <button
+              class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
+              <div class="bg-secondary py-1 px-3 rounded me-2">
+                <i class="fa-solid fa-angle-right text-white"></i>
+              </div>
+              <a href="Contact.html">Online Appointment</a>
+            </button>
+            <button id="mobile-menu-button" class="lg:hidden text-gray-600">
+              <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
+            </button>
+          </div>
+          <div id="mobile-menu" class="hidden lg:hidden">
+            <nav class="flex flex-col items-center space-y-4 py-4">
+              <a href="index.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Home</a>
+              <a href="About.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">About Us</a>
+              <a href="Services.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Services</a>
+              <a href="Pricelist.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Price List</a>
+              <a href="Monthlyspecials.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Monthly Specials</a>
+              <a href="Blog.html"
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Blog</a>
+              <a href="Contact.html"
+                class="text-[#7F7F7F] text-[24px] py-1 pb-12 font-[400] font-roboto  hover:text-primary">Contact</a>
+
+            </nav>
+          </div>
+        </header>
+
+        <!-- Hero Section with fixed Playfair font -->
+        <section class="container mx-auto flex flex-col lg:flex-row items-center px-4 lg:px-8 pt-[60px] lg:pt-[130px]">
+          <div class="lg:w-1/2 mb-8 lg:mb-0">
+            <h1 class="font-playfair font-bold text-gray-800 text-4xl lg:text-[70px] leading-tight mb-4">
+              Injectables Neuromodulators Dermal Fillers
+            </h1>
+            <p class="text-gray text-9base lg:text-[20px] my-9">
+              It is a long established fact that a reader will be distracted by the readable content of a page when
+              looking at its layout.
+            </p>
+            <div class="flex sm:flex-row  sm:space-x-6 mb-[50px] lg:mb-[160px] items-center justify-start space-x-6">
+              <button
+                class="flex bg-primary items-center justify-center sm:justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
+                <div class="bg-secondary py-1 px-3 rounded me-3">
+                  <i class="fa-solid fa-angle-right text-white"></i>
+                </div>
+                <a href="Contact.html">Online Appointment</a>
+              </button>
+              <button class="flex items-center font-roboto justify-center sm:justify-start">
+                <div class="text-[#333333] border-2 me-2 border-primary px-3 py-2 rounded-full transition duration-300">
+                  <i class="fa-solid fa-play text-primary"></i>
+                </div>
+                <a id="#video" class="text-base lg:text-[20px]">Our Video</a>
+              </button>
+            </div>
+          </div>
+          <div class="lg:w-1/2 flex items-center justify-center">
+            <img src="assets/images/slider_img05-1.png.png" alt="Hero Image" class="w-full max-w-[600px] lg:ms-[-75px]">
+          </div>
+        </section>
+        <img src="assets/images/smoke.png" alt=""
+          class="absolute bottom-0 w-full object-cover h-[115px] md:h-[200px] lg:h-[150px] z-[100]">
+        <img src="assets/images/home page bottol.png" alt=""
+          class="absolute bottom-0 left-0 w-[200px] sm:w-[300px] md:w-[400px] lg:w-[300px] hidden lg:block">
+      </section>
+    </div>
+
+
+
+    <!-- About Us Section -->
+    <section class="bg-mainbackground py-16 relative">
+      <div class="container mx-auto px-4 flex flex-col md:flex-row lg:flex-row items-center gap-8">
+        <!-- Left Side (Image Section) -->
+        <div class="md:w-1/2 flex items-center justify-center relative">
+          <img src="assets/images/About img.png" alt="About Us Image" class="w-full max-w-[550px] z-10">
+          <img src="assets/images/rangoli left.png" alt=""
+            class="absolute -bottom-10 -right-8 md:right-[16%] max-w-[100px] md:max-w-[150px] hidden lg:block">
+        </div>
+
+        <!-- Right Side (Content Section) -->
+        <div class="md:w-1/2 p-4 md:p-8">
+          <h2 class="font-playfair text-4xl md:text-5xl lg:text-[60px] font-bold text-gray-800 pb-4">About Us</h2>
+          <span>
+            <img src="assets/images/gradiun line.png" alt="Line Decoration" class="pb-2">
+          </span>
+          <p class="text-2xl lg:text-[35px] font-roboto font-semibold my-4 leading-tight">Why La Beauty Skin Center?</p>
+
+          <!-- First Point -->
+          <div class="flex items-start gap-3 mb-4">
+            <img src="assets/images/Right Icon.png" alt="Right Icon" class="w-[30px] h-[30px]">
+            <p class="text-gray font-roboto lg:text-[18px] md:text-[20px] leading-relaxed">
+              Our passion for beauty, perfectionism, and precision is what makes us the leaders in the medical spa
+              industry.
+            </p>
+          </div>
+
+          <!-- Second Point -->
+          <div class="flex items-start gap-3 mb-4">
+            <img src="assets/images/Right Icon.png" alt="Right Icon" class="w-[30px] h-[30px]">
+            <p class="text-gray font-roboto lg:text-[18px] md:text-[20px] leading-relaxed">
+              Dr. Karapetyan and his highly credentialed team offer unparalleled expertise, quality of service and most
+              impressive aesthetic outcomes at affordable prices. Their time, care, and personalized attention to detail
+              are what our clients enjoy the most.
+            </p>
+          </div>
+
+          <!-- Read More Button -->
+          <button
+            class="flex bg-primary items-center justify-start text-white font-semibold px-3 py-2 lg:px-5 lg:py-4 rounded-lg transition duration-300 hover:bg-primary-dark mt-8">
+            <div class="bg-secondary py-2 px-4 rounded me-2">
+              <i class="fa-solid fa-angle-right text-white"></i>
+            </div>
+            <a href="About.html" class="text-[18px] font-[600] font-roboto">Read More</a>
+          </button>
+        </div>
+      </div>
+
+      <img src="assets/images/smoke.png" alt="" class="absolute bottom-[0px] z-[100]">
+      <img src="assets/images/flower bottel.png" alt=""
+        class="absolute bottom-[0px] right-0 max-w-[420px] hidden lg:block">
+    </section>
+
+    <!-- Services Section -->
+    <section class="bg-background py-16 px-4">
+      <div class="container mx-auto lg:text-center">
+        <h2 class="font-playfair text-2xl lg:text-[40px] font-bold text-gray-800 leading-tight">The undeniable leader in
+          the aesthetic
+          industry.
+        </h2>
+        <p class="text-gray lg:text-[20px] py-3">LA Beauty Skin Center is a multi-location, Los Angeles based,
+          professional
+          medical spa. We provide the most advanced aesthetic <br> non-surgical treatments with the highest standards of
+          service.</p>
+        <div class="flex flex-wrap justify-center items-center mt-4 px-4">
+          <!-- Card 1 -->
+          <div class="w-full  sm:w-1/2 mb-4 lg:w-1/4 relative group px-2">
+            <div class="relative mx-auto">
+              <img src="assets/images/industry 1.png" alt="Service Image" class="rounded-lg shadow-lg w-full">
+              <div
+                class="absolute inset-0 rounded-lg h-full w-full bg-gradient-to-b from-transparent to-black opacity-80">
+              </div>
+              <p class="absolute bottom-7 left-0 right-0 text-white text-lg md:text-xl font-semibold px-3 text-center">
+                Everything Essential <br> Salon and Spa
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="w-full sm:w-1/2 mb-4 lg:w-1/4 relative group px-2">
+            <div class="relative mx-auto">
+              <img src="assets/images/industry 2.png" alt="Service Image" class="rounded-lg shadow-lg w-full">
+              <div
+                class="absolute inset-0 rounded-lg h-full w-full bg-gradient-to-b from-transparent to-black opacity-80">
+              </div>
+              <p class="absolute bottom-7 left-0 right-0 text-white text-lg md:text-xl font-semibold px-3 text-center">
+                $20 Credit For <br> Referrals
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="w-full sm:w-1/2 mb-4 lg:w-1/4 relative group px-2">
+            <div class="relative mx-auto">
+              <img src="assets/images/industry 3.png" alt="Service Image" class="rounded-lg shadow-lg w-full">
+              <div
+                class="absolute inset-0 rounded-lg h-full w-full bg-gradient-to-b from-transparent to-black opacity-80">
+              </div>
+              <p class="absolute bottom-7 left-0 right-0 text-white text-lg md:text-xl font-semibold px-3 text-center">
+                $30 Off Your 1st <br> Last Treatment
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="w-full sm:w-1/2 mb-4 lg:w-1/4 relative group px-2">
+            <div class="relative mx-auto">
+              <img src="assets/images/industry 4.png" alt="Service Image" class="rounded-lg shadow-lg w-full">
+              <div
+                class="absolute inset-0 rounded-lg h-full w-full bg-gradient-to-b from-transparent to-black opacity-80">
+              </div>
+              <p class="absolute bottom-7 left-0 right-0 text-white text-lg md:text-xl font-semibold px-3 text-center">
+                Buy 4 Get 1 Free <br>
+                <span class="text-sm md:text-base">(Last Hair Removed)</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="flex items-center justify-center my-2 relative">
+          <img src="assets/images/skincare video.png" alt="" class="w-full h-auto">
+          <a id="#video">
+            <img src="assets/images/video icon.png" alt=""
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[10%] pointer-events-none">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="bg-mainbackground py-16 relative px-4">
+      <div class="container mx-auto lg:text-center">
+        <h2 class="font-playfair text-4xl lg:text-[60px] font-bold text-gray-800 pb-4">Our Team</h2>
+        <span class="flex items-center lg:justify-center"><img src="assets/images/gradiun line.png" alt=""
+            class="pb-2"></span>
+        <p class="text-gray-600 mt-2 text-2xl lg:text-[35px] font-[600] font-roboto leading-tight">LA Beauty Skin Center
+          Medical Staff
+        </p>
+        <p class="lg:text-[20px] text-gray mt-3">LA Beauty Skin Center’s highly-experienced and talented team, led by
+          internationally
+          renowned <br> Dr. Arman F.
+          Karapetyan.</p>
+
+        <div class="container mx-auto px-4">
+          <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Team Member 1 -->
+            <div class="relative pt-[120px] sm:pt-[150px] md:pt-[180px]">
+              <div class="bg-white shadow-lg rounded-xl flex flex-col h-full relative pt-16">
+                <img src="assets/images/team mem 1.png" alt="Arman F. Karapetyan"
+                  class="absolute -top-[100px] left-1/2 transform -translate-x-1/2 w-[150px] sm:w-[180px] lg:w-[200px] h-[150px] sm:h-[180px] lg:h-[200px] rounded-xl object-cover">
+                <div class="px-6 lg:pt-16 md:pt-10 pb-6 flex-grow">
+                  <h3 class="font-roboto text-2xl sm:text-[30px] font-bold text-gray-800 mb-2">Arman F. Karapetyan</h3>
+                  <p class="text-gray text-lg sm:text-[20px] mb-3 leading-relaxed">MD PhD</p>
+                  <div
+                    class="text-gray text-sm sm:text-[18px] leading-relaxed overflow-y-auto max-h-[80px] sm:max-h-[146px]">
+                    Dr. Karapetyan is a licensed and board certified physician with a 25 year background in and passion
+                    for Aesthetic Medicine. Dr. Karapetyan is a licensed and experienced medical professional.
+                  </div>
+                </div>
+                <div class="bg-[#fbe7e4] py-3 w-full rounded-b-xl">
+                  <p
+                    class="text-[#FD9C8A] text-center text-sm md:text-base lg:text-[20px] font-roboto font-[400] break-words px-2">
+                    https://www.labeautyskincenter.com/about
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <!-- Team Member 2 -->
+            <div class="relative pt-[120px] sm:pt-[150px] md:pt-[180px]">
+              <div class="bg-white shadow-lg rounded-xl flex flex-col h-full relative pt-16">
+                <img src="assets/images/team mem 2.png" alt="Richard Tsui"
+                  class="absolute -top-[100px] left-1/2 transform -translate-x-1/2 w-[150px] sm:w-[180px] lg:w-[200px] h-[150px] sm:h-[180px] lg:h-[200px] rounded-xl object-cover">
+                <div class="px-6 lg:pt-16 md:pt-10 pb-6 flex-grow">
+                  <h3 class="font-roboto text-2xl sm:text-[30px] font-bold text-gray-800 mb-2">Richard Tsui</h3>
+                  <p class="text-gray text-lg sm:text-[20px] mb-3 leading-relaxed">PA-C</p>
+                  <div
+                    class="text-gray text-sm sm:text-[18px] leading-relaxed overflow-y-auto max-h-[80px] sm:max-h-[190px]">
+                    Richard Tsui PA-C is a passionate skin care provider that is known for his gentle touch with needles
+                    and his focus on a natural aesthetic result.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="relative pt-[120px] sm:pt-[150px] md:pt-[180px]">
+              <div class="bg-white shadow-lg rounded-xl flex flex-col h-full relative pt-16">
+                <img src="assets/images/team mem 3.png" alt="Clara Mau"
+                  class="absolute -top-[100px] left-1/2 transform -translate-x-1/2 w-[150px] sm:w-[180px] lg:w-[200px] h-[150px] sm:h-[180px] lg:h-[200px] rounded-xl object-cover">
+                <div class="px-6 lg:pt-16 md:pt-10 pb-6 flex-grow">
+                  <h3 class="font-roboto text-2xl sm:text-[30px] font-bold text-gray-800 mb-2">Clara Mau</h3>
+                  <p class="text-gray text-lg sm:text-[20px] mb-3 leading-relaxed">MD PhD</p>
+                  <div
+                    class="text-gray text-sm sm:text-[18px] leading-relaxed overflow-y-auto max-h-[80px] sm:max-h-[195px]">
+                    Clara is passionate about providing injection treatments that create beautiful and natural results.
+                    Although she performs a variety of non-surgical aesthetic treatments, some of her favorites include
+                    lip enhancement, Sculptra for face and Sculptra butt lift!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex lg:justify-center w-full">
+            <button
+              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 md:ms-4">
+              <div class="bg-secondary py-1 px-3 rounded me-2">
+                <i class="fa-solid fa-angle-right text-white"></i>
+              </div>
+              <a href="Ourteam.html" class="text-[18px] font-roboto">View All</a>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="">
+        <img src="assets/images/left-flower.png" alt="" srcset="" class="absolute top-[0] left-0 hidden lg:block">
+        <img src="assets/images/right-flower.png" alt="" srcset="" class="absolute top-[0] right-0 hidden lg:block">
+      </div>
+    </section>
+
+    <!-- injectors Section -->
+    <section class="bg-background py-16 relative">
+      <div class="container mx-auto">
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="space-y-6 ">
+            <h1 class="text-2xl lg:text-[35px] md:text-4xl font-bold text-gray-800 px-7 leading-tight">
+              Home To LA’s Best Injectors
+            </h1>
+            <div class="space-y-4 space-x-7">
+              <p class="text-gray-600">
+              <div class="flex">
+                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
+                <p class="text-gray font-roboto mb-2 flex ps-3 lg:text-[20px]">
+                  LA Beauty Skin Center is home to Los Angeles’ best injectors providing innovative aesthetic procedures
+                  including lip
+                  injections, non-surgical rhinoplasty, anti-aging injections with dermal fillers, wrinkle prevention
+                  treatment
+                  with Botox and other neuromodulators.
+                </p>
+              </div>
+              <div class="flex">
+                <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+                <p class="text-gray font-roboto mb-2 flex ps-3 lg:text-[20px]">
+                  At LA Beauty Skin Center we offer state-of-the-art laser treatments and laser hair removal, body
+                  sculpting
+                  with CoolSculpting, skin remodeling and resurfacing with IPL, Forma and Morpheus 8.For skincare we
+                  offer revitalizing
+                  facials, peels, microdermabrasion and PRP.
+                </p>
+              </div>
+              </p>
+            </div>
+            <button
+              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 ms-8">
+              <div class="bg-secondary py-1 px-3 rounded me-2">
+                <i class="fa-solid fa-angle-right text-white"></i>
+              </div>
+              <a href="Services.html" class="text-[18px] font-[600] font-roboto">View All</a>
+            </button>
+          </div>
+          <div class="rounded-2xl flex items-center lg:justify-end md:justify-center relative">
+            <img src="assets/images/Injector.png" alt="Professional performing facial treatment" class="object-cover"
+              style="z-index: 999;" />
+            <img src="assets/images/rangoli right.png" alt="" class="absolute left-7 hidden lg:block">
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="flex items-center lg:justify-start md:justify-center my-2 relative">
+            <img src="assets/images/Removel-center.png" alt="" class="object-cover" style="z-index: 999;">
+            <img src="assets/images/video icon.png" alt="" class="absolute max-w-100 right-[50%]">
+
+            <img src="assets/images/rangoli left.png" alt="" class="absolute left-[67%] hidden lg:block">
+
+          </div>
+          <div>
+            <h1 class="text-3xl lg:text-[35px] md:text-4xl font-bold text-gray-800 px-7 leading-tight">
+              LA’s Favorite Laser Hair Removal Center
+            </h1>
+            <div class="space-y-4 px-8">
+              <p class="text-gray-600">
+              <div class="flex">
+                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                  Our full scope of medspa services range from skin remodeling to face sculpting with fillers and
+                  injectables, from body
+                  sculpting to laser hair removal.
+                </p>
+              </div>
+              <div class="flex">
+                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                  We perform over 100,000 laser procedures per year!
+                </p>
+              </div>
+              <div class="flex">
+                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                  Luxurious facilities, exceptional results, cutting edge technologies, highly-experienced and talented
+                  staff.
+                </p>
+              </div>
+              <div class="flex">
+                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                  We believe that advanced aesthetic services should be accessible to everyone, and we are striving to
+                  continue making it
+                  a reality at our medical spas in Glendale and North Hollywood.
+                </p>
+              </div>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/flower bottel.png" alt="" class="absolute right-0 bottom-0 max-w-[400px] hidden lg:block">
+    </section>
+
+
+
+    <!-- Blog Section -->
+    <section class="bg-mainbackground lg:py-16 px-4 py-6">
+      <div class="container mx-auto">
+        <!-- Header Section -->
+        <div class=" lg:text-center mb-12">
+          <h2 class="font-playfair text-4xl lg:text-[60px] font-bold text-gray-800 lg:mb-6 mb-2">Our Blogs</h2>
+          <span class="flex items-center lg:justify-center"><img src="assets/images/gradiun line.png" alt=""
+              class="pb-3"></span>
+          <p class="text-md lg:text-[20px] text-gray mt-3">LA Beauty Skin Center’s highly-experienced and talented team,
+            led by
+            internationally
+            renowned <br> Dr. Arman F.
+            Karapetyan.</p>
+        </div>
+
+        <!-- Blog Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <!-- Blog Card 1 -->
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4">
+            <img src="assets/images/tattoo-removal.png" alt="Tattoo Removal" class="w-full h-68 object-cover">
+            <div class="p-6 pt-6">
+              <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
+                <span
+                  class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-1 px-3 lg:py-2 lg:px-4 rounded-3xl">April
+                  22, 2024</span>
+                <span class="text-sm lg:text-[20px] font-roboto text-[400] text-gray-500"><i
+                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago</span>
+              </div>
+              <h2 class="text-xl lg:text-[30px] font-bold mb-3 leading-normal">Does Tattoo Removal Work All Skin Types?
+              </h2>
+              <p class="text-gray text-sm lg:text-[20px] mb-4 font-roboto leading-normal">Does Tattoo Removal Work On
+                All Skin
+                Types?Yes, tattoo
+                removal generally works on <br> all skin types.</p>
+              <button
+                class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
+                <div class="bg-[#FFE3DE] py-1 px-3 rounded-xl me-2">
+                  <i class="fa-solid fa-angle-right text-primary"></i>
+                </div>
+                <a href="Blogdetail.html" class="text-[18px] font-[600] font-roboto text-primary">Read More</a>
+              </button>
+            </div>
+          </div>
+
+          <!-- Blog Card 2 -->
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4">
+            <img src="assets/images/botox-neck.png" alt="Tattoo Removal" class="w-full h-68 object-cover">
+            <div class="p-6 pt-6">
+              <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
+                <span
+                  class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-1 px-3 lg:py-2 lg:px-4 rounded-3xl">April
+                  22, 2024</span>
+                <span class="text-sm lg:text-[20px] font-roboto text-[400] text-gray-500"><i
+                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago</span>
+              </div>
+              <h2 class="text-xl lg:text-[30px] font-bold mb-3 leading-normal">Botox Neck Lift: What Is The Nefertiti
+                Lift?</h2>
+              <p class="text-gray text-sm lg:text-[20px] mb-4 font-roboto  leading-normal">Botox Neck Lift: What is the
+                Nefertiti Lift?
+                Egyptian
+                Queen Nefertiti was renowned for <br> her beauty...</p>
+              <button
+                class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
+                <div class="bg-[#FFE3DE] py-1 px-3 rounded-xl me-2">
+                  <i class="fa-solid fa-angle-right text-primary"></i>
+                </div>
+                <a href="Blogdetail.html" class="text-[18px] font-[600] font-roboto text-primary">Read More</a>
+              </button>
+            </div>
+          </div>
+
+          <!-- Blog Card 3 -->
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4">
+            <img src="assets/images/laser-hair.png" alt="Tattoo Removal" class="w-full h-68 object-cover">
+            <div class="p-6 pt-6">
+              <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
+                <span
+                  class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-1 px-3 lg:py-2 lg:px-4 rounded-3xl">April
+                  22, 2024</span>
+                <span class="text-sm lg:text-[20px] font-roboto text-[400] text-gray-500"><i
+                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago</span>
+              </div>
+              <h2 class="text-xl lg:text-[30px] font-bold mb-3  leading-normal">Laser Hair Removal Areas : Where Does It
+                Work Best?</h2>
+              <p class="text-gray text-sm lg:text-[20px] mb-4 font-roboto  leading-normal">Laser Hair Removal Areas:
+                Where Does It Work
+                Best?Laser
+                hair removal is one of the most common cosmetic...</p>
+              <button
+                class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
+                <div class="bg-[#FFE3DE] py-1 px-3 rounded-xl me-2">
+                  <i class="fa-solid fa-angle-right text-primary"></i>
+                </div>
+                <a href="Blogdetail.html" class="text-[18px] font-[600] font-roboto text-primary">Read More</a>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center flex items-center lg:justify-center md:ps-4">
+          <button
+            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-3 rounded-lg transition duration-300 my-4">
+            <div class="bg-secondary py-1 px-3 rounded me-2">
+              <i class="fa-solid fa-angle-right text-white"></i>
+            </div>
+            <a href="Blog.html" class="text-[18px] font-roboto">View All</a>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Section -->
+    <section class="bg-background py-16 relative">
+      <div class="container mx-auto mb-16">
+        <!-- Header Section -->
+        <div class="lg:text-center mb-12 px-4">
+          <h2 class="font-playfair text-4xl lg:text-[60px] font-bold text-gray-800 lg:mb-6 mb-2">Reviews</h2>
+          <span class="flex items-center lg:justify-center"><img src="assets/images/gradiun line.png" alt=""
+              class="pb-3 lg:ms-14"></span>
+          <p class="text-md lg:text-[20px] text-gray mt-3">It is a long established fact that a reader will be
+            distracted by
+            the readable content of a page <br> when looking at
+            its layout.</p>
+        </div>
+
+        <!-- Reviews Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+          <!-- Review Card 1 -->
+          <div class="bg-white p-8 rounded-2xl shadow-lg relative mt-[65px] mx-4">
+            <div class="absolute -top-16 left-8">
+              <img src="assets/images/reviewer1.png" alt="Hotel User"
+                class="w-28 h-28 rounded-xl border-4 border-white shadow-md">
+            </div>
+            <div class="mt-8">
+              <h3 class="text-2xl lg:text-[30px] font-roboto font-bold text-gray-800 mb-2">Hotel User</h3>
+              <p
+                class="text-gray font-medium text-lg lg:text-[20px] font-roboto mb-4 border-b border-[#F5EBE9] pb-3 border-gray-300">
+                Seoer of Thimpress</p>
+              <p class="text-gray text-md lg:text-[19px] mb-4">Lorem ipsum dolor sit amet, consectetur elit. Ad
+                assumenda fuga illo
+                laudantium magni sed temporibus. Amet atque aut
+                autem consectetur consequuntur dolorum enim.</p>
+              <div class="flex text-[#FF7E07] gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+            <div class="absolute top-5 right-8 text-6xl">
+              <img src="assets/images/Quote.png" alt="" class="max-w-90">
+            </div>
+          </div>
+
+          <!-- Review Card 2 -->
+          <div class="bg-white p-8 rounded-2xl shadow-lg relative relative mt-[65px] sm:mt-[150px] md:mt-[65px] mx-4">
+            <div class="absolute -top-16 left-8">
+              <img src="assets/images/reviewer2.png" alt="Hotel User"
+                class="w-28 h-28 rounded-xl border-4 border-white shadow-md">
+            </div>
+            <div class="mt-8">
+              <h3 class="text-2xl lg:text-[30px] font-roboto font-bold text-gray-800 mb-2">Wordpress User</h3>
+              <p
+                class="text-gray font-medium text-lg lg:text-[20px] font-roboto mb-4 border-b border-[#F5EBE9] pb-3 border-gray-300">
+                CEO of Touristlink</p>
+              <p class="text-gray text-md lg:text-[19px] mb-4">Lorem ipsum dolor sit amet, consectetur elit. Ad
+                assumenda fuga illo
+                laudantium magni sed temporibus. Amet atque aut
+                autem consectetur consequuntur dolorum enim.</p>
+              <div class="flex text-[#FF7E07] gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-[#FFECDA]"></i>
+                <i class="fa-solid fa-star text-[#FFECDA]"></i>
+              </div>
+            </div>
+            <div class="absolute top-5 right-8 text-6xl">
+              <img src="assets/images/Quote.png" alt="" class="max-w-90">
+            </div>
+          </div>
+
+          <!-- Review Card 3 -->
+          <div class="bg-white p-8 rounded-2xl shadow-lg relative mt-[65px] sm:mt-[150px] md:mt-[65px] mx-4"
+            style="z-index: 900;">
+            <div class="absolute -top-16 left-8">
+              <img src="assets/images/reviewer3.png" alt="Hotel User"
+                class="w-28 h-28 rounded-xl border-4 border-white shadow-md">
+            </div>
+            <div class="mt-8">
+              <h3 class="text-2xl lg:text-[30px] font-roboto font-bold text-gray-800 mb-2">Hotel Booking Expert</h3>
+              <p
+                class="text-gray font-medium text-lg lg:text-[20px] font-roboto mb-4 border-b border-[#F5EBE9] pb-3 border-gray-300">
+                Copyright of Foobla</p>
+              <p class="text-gray text-md lg:text-[19px] mb-4">Lorem ipsum dolor sit amet, consectetur elit. Ad
+                assumenda fuga illo
+                laudantium magni sed temporibus. Amet atque aut
+                autem consectetur consequuntur dolorum enim.</p>
+              <div class="flex text-[#FF7E07] gap-1">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star text-[#FFECDA]"></i>
+              </div>
+            </div>
+            <div class="absolute top-5 right-8 text-6xl">
+              <img src="assets/images/Quote.png" alt="" class="max-w-90">
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/left-flower.png" alt="" class="absolute top-0 hidden lg:block">
+      <img src="assets/images/flower bottel.png" alt="" class="absolute right-0 bottom-0 max-w-[350px] hidden lg:block">
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4 md:px-8 relative">
+      <div class="container mx-auto grid md:grid-cols-1 lg:grid-cols-2 gap-12 flex items-center justify-center">
+        <!-- Form Column -->
+        <div class="bg-white p-8 rounded-xl shadow-lg relative max-w-xl">
+          <form class="space-y-6" style="z-index: 1000;">
+            <div class="grid grid-cols-2 gap-4 items-start">
+              <input type="text" placeholder="First Name"
+                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]">
+              <input type="text" placeholder="Last Name"
+                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]">
+            </div>
+            <input type="email" placeholder="Email"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]">
+            <input type="tel" placeholder="Phone Number"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]">
+            <textarea placeholder="Inquiry" rows="4"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"></textarea>
+            <div class="flex mb-9">
+              <div class="flex items-center gap-2 border rounded-xl shadow-lg border-[#EAEAEA] p-4 px-9">
+                <input type="checkbox" id="human" class="rounded">
+                <label for="human" class="text-[16px] font-[400] text-gray font-roboto">I am
+                  human</label>
+                <img src="assets/images/i-am-human.png" alt="" class="ms-20">
+              </div>
+            </div>
+            <!-- Placeholder for reCAPTCHA -->
+            <div class="pt-6">
+              <button
+                class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300">
+                <div class="bg-secondary px-3 rounded me-2">
+                  <i class="fa-solid fa-angle-right text-white"></i>
+                </div>
+                <span class="text-[18px] font-roboto">Submit</span>
+              </button>
+            </div>
+          </form>
+          <img src="assets/images/rangoli left.png" alt="" class="absolute top-28 hidden lg:block"
+            style="left: 84%;z-index: -10;">
+        </div>
+        <!-- Content Column -->
+        <div class="space-y-6">
+          <h2 class="text-3xl lg:text-[55px] font-playfair font-bold text-gray-800 leading-tight">
+            Contact LA Beauty Skin Center
+          </h2>
+          <span><img src="assets/images/gradiun line.png" alt="" class="mt-3"></span>
+          <span><img src="assets/images/" alt=""></span>
+          <div class="flex mt-0">
+            <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+            <p class="text-gray font-roboto flex ps-3 text-[20px]">
+              We look forward to hearing from you and helping you achieve your beauty goals! You can reach
+              us at
+              the
+              form below or by
+              calling us at 818-888-0001. You may also email us at Info@LABeautyskincenter.com
+            </p>
+          </div>
+          <div class="flex">
+            <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+            <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
+              Aenean pulvinar laoreet tellus ut tincidunt. Praesent a lectus egestas, finibus enim sit
+              amet,
+              mollis
+              lorem. Sed a
+              volutpat velit. Pellentesque habitant morbi Vestibulum mattis gravida odio tristique.Aenean
+              pulvinar
+              laoreet tellus ut
+              tincidunt. Praesent a lectus egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
+              velit.
+              Pellentesque habitant
+              morbi Vestibulum mattis gravida odio tristique.
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="assets/images/treewithstone.png" alt=""
+        class="absolute right-0 bottom-[13%] max-w-[174px] hidden lg:block">
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <!-- Logo and Description -->
+        <div class="text-center">
+          <img src="assets/images/footer logo top.png" alt="LA Beauty Skin Center" class="mx-auto"
+            style="width: 110px; height: 116px;">
+          <img src="assets/images/footer logo bottom.png" alt="LA Beauty Skin Center" class="mx-auto"
+            style="width: 261px; height: 57px;">
+          <p class="text-gray mx-auto text-[20px] pt-6">
+            Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus egestas, finibus enim sit amet, mollis lorem. Sed
+            a volutpat <br>
+            velit pellet habitant tristique.
+          </p>
+        </div>
+
+        <!-- Footer Grid -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Newsletter -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Newsletter</h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+            <p class="text-[20px] text-gray">Newsletter Sign Up</p>
+            <div class="flex">
+              <input type="email" placeholder="Email Address" class="text-[14px] ps-3 rounded-lg">
+              <button
+                class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300">
+                <div class="bg-secondary px-2 me-1 rounded">
+                  <i class="fa-solid fa-angle-right text-white"></i>
+                </div>
+                <span class="text-[14px] font-roboto font-normal">Sign Up</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Quick Links</h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray text-[18px] font-[400]">About Us</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Contact</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Sitemap</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Privacy Policy</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Accessibility
+                  Statement</a></li>
+            </ul>
+          </div>
+
+          <!-- Popular Services -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Popular Services</h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Laser Hair Removal</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Lip Augmentation</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Non-Surgical Rhinoplasty</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Jaw Line Shaping</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Cheek Augmentation/Shaping</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Double Chin Treatment</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Liquid Facelift</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">CoolSculpting</a></li>
+              <li><a href="#" class="text-gray text-[18px] font-[400]">Morpheus8 Skin Resurfacing</a></li>
+            </ul>
+          </div>
+
+          <!-- Follow Us -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Follow Us</h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+            <div class="flex gap-2 items-center">
+              <a href="https://www.facebook.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.twitter.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.instagram.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://mojapp.in/"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.youtube.com/"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="#" class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <img src="assets/images/fan.png" alt="" class="w-4 flex items-center justify-center">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
+          <p class="text-[20px] text-gray">Copyright © LA Beauty Skin Center</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>
+
+
+<script>
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const icon = mobileMenuButton.querySelector('i');
+
+  // Add event listener for toggle button
+  mobileMenuButton.addEventListener('click', function () {
+    // Toggle visibility of the menu
+    mobileMenu.classList.toggle('hidden');
+
+    // Toggle between icons
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.remove('fa-bars', 'text-[21px]', 'text-[#333333]'); // Remove old size and color
+      icon.classList.add('fa-xmark', 'text-[32px]', 'text-primary'); // Add new size and primary color
+    } else {
+      icon.classList.remove('fa-xmark', 'text-[32px]', 'text-primary'); // Remove new size and color
+      icon.classList.add('fa-bars', 'text-[21px]', 'text-[#333333]'); // Add old size and default color
+    }
+  });
+</script>

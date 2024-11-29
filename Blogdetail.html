@@ -1,0 +1,790 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Updated Google Fonts Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- Other CSS imports -->
+    <link rel="stylesheet" href="assets/css/utilities.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <link rel="stylesheet" href="assets/fonts/fonts.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Updated Tailwind Configuration -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                        primary: '#FD9C8A',
+                        secondary: '#FDB0A1',
+                        mainbackground: '#FBFBFB',
+                        background: '#FFF5F4',
+                        gray: '#7F7F7F'
+                    },
+                    fontFamily: {
+                        playfair: ['Playfair Display', 'serif'],
+                        roboto: ['Roboto', 'sans-serif'],
+                        dansing: ['Dancing Script', 'cursive'],
+                        sans: ['IBM Plex Sans', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- Custom styles to ensure Playfair Display works -->
+    <style>
+        .font-playfair {
+            font-family: 'Playfair Display', serif !important;
+        }
+    </style>
+</head>
+
+<body class="bg-mainbackground">
+    <div>
+        <section class="bg-background relative bg-center bg-no-repeat bg-top" style="
+          background-image: url('assets/images/background-img-main.png');
+          background-size: cover;
+        ">
+            <!-- Header -->
+            <header class="shadow-sm">
+                <div class="container mx-auto flex justify-between items-center p-4">
+                    <img src="assets/images/logo.png" alt="Logo" class="h-12 max-w-[125px]" />
+                    <nav class="hidden lg:flex space-x-4">
+                        <a href="index.html" class="text-[#7F7F7F] hover:text-primary font-normal">Home</a>
+                        <a href="About.html" class="text-[#7F7F7F] hover:text-primary font-normal">About Us</a>
+                        <a href="Services.html" class="text-[#7F7F7F] hover:text-primary font-normal">Services</a>
+                        <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price List</a>
+                        <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly
+                            Specials</a>
+                        <a href="Blog.html" class="text-[#7F7F7F] hover:text-primary font-normal">Blog</a>
+                        <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
+                    </nav>
+                    <button
+                        class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
+                        <div class="bg-secondary py-1 px-3 rounded me-2">
+                            <i class="fa-solid fa-angle-right text-white"></i>
+                        </div>
+                        <span>Online Appointment</span>
+                    </button>
+                    <button id="mobile-menu-button" class="lg:hidden text-gray-600">
+                        <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
+                    </button>
+                </div>
+                <div id="mobile-menu" class="hidden lg:hidden">
+                    <nav class="flex flex-col items-center space-y-4 py-4">
+                        <a href="index.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Home</a>
+                        <a href="About.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">About
+                            Us</a>
+                        <a href="Services.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Services</a>
+                        <a href="Pricelist.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Price
+                            List</a>
+                        <a href="Monthlyspecials.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Monthly
+                            Specials</a>
+                        <a href="Blog.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Blog</a>
+                        <a href="Contact.html"
+                            class="text-[#7F7F7F] text-[24px] py-1 pb-12 font-[400] font-roboto hover:text-primary">Contact</a>
+                    </nav>
+                </div>
+            </header>
+
+            <!-- Hero Section with fixed Playfair font -->
+            <section class="container mx-auto flex flex-col md:flex-row items-center p-8">
+                <div class="md:w-1/2">
+                    <h1 class="font-playfair font-bold text-gray-800 text-[70px] leading-tight mb-2">
+                        Blog Detail
+                    </h1>
+                    <span><img src="assets/images/gradiun line.png" alt=""></span>
+                    <p class="text-gray mt-4 text-[20px]">
+                        It is a long established fact that a reader will be distracted by the readable content of a page
+                        when looking at its
+                        layout.
+                    </p>
+                    <div class="flex space-x-4 mt-8 items-center">
+                        <span>
+                            <img src="assets/images/home.png" alt="" class="w-[22px]">
+                        </span>
+                        <span>
+                            <img src="assets/images/right arrow.png" alt="" class="w-[12px]">
+                        </span>
+                        <span class="font-[500] text-[20px] text-primary">Blog Detail</span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex items-center justify-center lg:pt-[10px]">
+                    <img src="assets/images/blogdetail page slider.png" alt="Hero Image"
+                        class="w-full max-w-[863px] lg:me-[0px]" />
+                    <!-- <img src="assets/images/sky.png" alt="" class="z-50 absolute bottom-40"> -->
+            </section>
+            <img src="assets/images/smoke.png" alt="" class="absolute bottom-[0px] z-[100]">
+            <img src="assets/images/long leafe.png" alt="" class="absolute bottom-[0px] max-w-[301px] h-[583]">
+        </section>
+
+        <!-- injectors Section -->
+        <section class="py-16">
+            <div class="container mx-auto">
+                <div class="grid gap-8">
+                    <div class="space-y-6 p-8">
+                        <h2 class="font-playfair text-[60px] font-bold text-gray-800 text-left">
+                            Does Tattoo Removal
+                            Work On All Skin Types?</h2>
+                        <span><img src="assets/images/big gradiun line.png" alt="" class="pb-2"></span>
+                        <div class="space-y-3">
+                            <p class="text-gray-600">
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto ps-3 flex text-[20px]">
+                                    Yes, tattoo removal generally works on all skin types. However, tattoo removal on
+                                    dark skin has specific considerations.
+                                    The speed at which results become apparent depends mainly on the amount of melanin
+                                    in the skin.
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
+                                    Those with lighter skin may see quicker results in fewer sessions compared to those
+                                    who go in for dark skin tattoo
+                                    removal.
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
+                                    This is because the laser that removes ink from the skin is attracted to darker
+                                    pigments like tattoo ink. As such,
+                                    lighter skin with less melanin allows the laser to accurately focus on darker
+                                    pigments. However, laser tattoo removal on
+                                    dark skin may be a challenge, as the mechanism may have difficulty differentiating
+                                    tattoo ink from darker skin pigments.
+                                </p>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="py-16">
+            <div class="container mx-auto px-4">
+
+                <div class="grid md:grid-cols-2 gap-4 items-center">
+                    <!-- Image Section -->
+                    <div class="grid-cols-6 relative profile-bg flex justify-center">
+                        <img src="assets/images/tatto1.png" alt="Dr. Arman F. Karapetyan" class=" object-cover absolute"
+                            style="top: -290px; left: -30px;">
+                        <img src="assets/images/tatto2.png" alt="" class=" absolute" style="right: 0; top: -336px;">
+                        <img src="assets/images/tatto3.png" alt="" class=" absolute" style="right: 0; top: -29px;">
+                    </div>
+
+                    <!-- Content Section -->
+                    <div class="grid-cols-6 space-y-6">
+                        <div class="text-center md:text-left">
+                            <h2 class="font-playfair text-[60px] font-bold text-gray-800">How Does Laser Tattoo Removal
+                                Work?</h2>
+                            <span><img src="assets/images/gradiun line.png" alt="" class=""></span>
+                        </div>
+
+                        <div class="flex">
+                            <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
+                            <p class="text-gray font-roboto flex ps-3 text-[20px] mb-0">
+                                Tattoo removal creams and laser procedures for laser tattoo removal on dark skin tend to
+                                have a lower risk of scarring
+                                but take longer to work. In contrast, more invasive methods like dermabrasion, surgical
+                                excision, and chemical peels
+                                remove layers of skin that contain particles of ink. This allows the skin to regenerate
+                                where a tattoo used to be. 
+                            </p>
+                        </div>
+                        <div class="flex">
+                            <span> <img src="assets/images/strat line.png" class="max-w-[30px] mt-1"></span>
+                            <p class="text-[#333333] font-roboto mb-2 flex ps-5 text-[20px]">
+                                In general, the goal is to break down tattoo ink into much smaller particles so the
+                                immune system can safely remove them
+                                from the body.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="flex mt-28">
+                        <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
+                        <p class="text-gray font-roboto mb-3 flex ps-3 text-[20px]">
+                            Tattoo removal creams and laser procedures for laser tattoo removal on dark skin tend to
+                            have a lower risk of scarring
+                            but take longer to work. In contrast, more invasive methods like dermabrasion, surgical
+                            excision, and chemical peels
+                            remove layers of skin that contain particles of ink. This allows the skin to regenerate
+                            where a tattoo used to be. 
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
+                        <p class="text-gray font-roboto mb-3 flex ps-3 text-[20px]">
+                            If done correctly, even the challenge of tattoo removal on dark skin can be very effective,
+                            provided that the patient
+                            isn’t keloidal or prone to scarring. 
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- injectors Section -->
+        <section class="py-16">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 items-center relative">
+                    <div class="space-y-6 bg-white p-8 rounded-2xl" style="box-shadow: 0px 0px 40px 0px #00000014;
+">
+                        <h2 class="font-playfair text-[60px] font-[700] text-gray-800">Why Does Skin Tone Matter?</h2>
+                        <span><img src="assets/images/gradiun line.png" alt="" class="pb-2"></span>
+                        <div class="space-y-3">
+                            <p class="text-gray-600">
+                            <div class="flex">
+                                <p class="text-gray font-roboto flex text-[20px]">
+                                    Lighter skin contains less melanin, so it typically responds more quickly to laser
+                                    tattoo removal. The laser can easily
+                                    distinguish the dark ink pigments from the light skin. 
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <p class="text-gray font-roboto mb-2 flex text-[20px]">
+                                    Lighter skiLighter skin contains less melanin, so it typically responds more quickly
+                                    to laser tattoo removal. The laser
+                                    can easily distinguish the dark ink pigments from the light skin. n contains less
+                                    melanin, so it typically responds more
+                                    quickly to laser tattoo removal. The laser can easily distinguish the dark ink
+                                    pigments from the light skin. 
+                                </p>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl">
+                        <img src="assets/images/skin tone.png" alt="Professional performing facial treatment"
+                            class="max-w-[632px] h-full object-cover absolute top-0" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section class="bg-mainbackground pb-16">
+            <div class="container mx-auto flex flex-col md:flex-row items-center ">
+                <div class="md:w-1/2 flex items-center justify-center relative">
+                    <img src="assets/images/prowork1.png" alt="About Us Image" class="w-full max-w-[550px]">
+                    <img src="assets/images/prowork2.png" alt="About Us Image"
+                        class="w-full max-w-[308px] absolute right-0 -bottom-6">
+                </div>
+                <div class="md:w-1/2 p-8">
+                    <h2 class="font-playfair text-[60px] font-bold text-gray-800">Does Picosure Pro Work on All Skin
+                        Types?</h2>
+                    <span><img src="assets/images/gradiun line.png" alt="" class="pb-4"></span>
+
+                    <div class="flex">
+                        <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            Tattoo removal with PicoSure Pro   works on all skin types, although it’s not recommended
+                            for the Fitzpatrick skin type
+                            VI.  It is a safe and effective way to remove tattoos and address hyperpigmentation.
+                            PicoSure Pro is an FDA-cleared
+                            picosecond device that can also reduce fine lines, wrinkles, acne scars, and pore size with
+                            no downtime.
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            Aside from dark skin tattoo removal, PicoSure Pro can improve your skin’s overall tone and
+                            texture. The laser uses the
+                            755nm wavelength to target black, green, and blue ink, while the 532nm wavelength targets
+                            sunset colors like yellow,
+                            red, and orange, which are very difficult to remove. Among the benefits of PicoSure Pro are:
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            Tailoring treatments depending on target area size
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            Opting for turbo mode with shortened pulse width for stubborn ink
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            Tattoos fade gradually without patche
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            It’s important to know that a few treatments, usually 6-7 sessions, are necessary to achieve
+                            the desired results.
+                        </p>
+                    </div>
+                    <div class="flex">
+                        <p><img src="assets/images/Right Icon.png" class="max-w-[30px]"></p>
+                        <p class="text-gray font-roboto mb-4 flex ps-3 text-[20px]">
+                            If you are unsure about Picosure vs PicoSure Pro, consult our experts. One of the benefits
+                            of medical spas like LA
+                            Beauty Skin Center is that you can talk to a licensed professional to help determine the
+                            right treatment for you.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- injectors Section -->
+        <section class="py-16">
+            <div class="container mx-auto">
+                <div class="grid gap-8 items-center">
+                    <div class="space-y-6 bg-white shadow-lg p-8 rounded-2xl">
+                        <h2 class="font-playfair text-[60px] font-bold text-gray-800 text-left">Impact of Skin Tone on
+                            Duration of Laser Tattoo Removal</h2>
+                        <span><img src="assets/images/gradiun line.png" alt=""></span>
+                        <div class="space-y-3">
+                            <div class="text-gray-600">
+                                <div class="flex">
+                                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                    <p class="text-gray font-roboto ps-3 flex text-[20px]">
+                                        There are six types of skin tones per the Fitzpatrick Scale. Type 1 is the
+                                        lightest,
+                                        which is very sensitive to
+                                        sunlight, gets easily sunburnt, and doesn’t tan. On the other end of the scale,
+                                        Type
+                                        6 is the darkest skin tone. Those
+                                        with this type don’t get sunburnt but tan relatively easily.
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                    <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
+                                        The Fitzpatrick scale demonstrates how different skin tones react to UV
+                                        radiation
+                                        from sunlight. Melanin absorbs heat,
+                                        so based on this scale, laser technicians must determine the proper wavelength
+                                        that
+                                        will prevent injuries and adverse
+                                        reactions.
+                                    </p>
+                                </div>
+                                <div class="flex mb-6">
+                                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                    <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
+                                        In general, dark skin tattoo removal and higher melanin concentration tend to
+                                        take
+                                        longer than tattoo removal on brown
+                                        skin and significantly lighter skin types.
+                                    </p>
+                                </div>
+                            </div>
+                            <button
+                                class="flex bg-primary items-center justify-between text-white font-semibold p-3 rounded-lg transition duration-300">
+                                <div class="bg-secondary px-2 rounded me-2">
+                                    <i class="fa-solid fa-angle-right text-white"></i>
+                                </div>
+                                <span class="font-[600]">Make An Appointment Request</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- injectors Section -->
+        <section class="bg-background py-16">
+            <div class="container mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <h1 class="text-[35px] md:text-[60px] font-bold font-playfair text-gray-800">
+                            Fitzpatrick Skin Types
+                        </h1>
+                        <span><img src="assets/images/gradiun line.png" alt=""></span>
+                        <div class="space-y-3">
+                            <p class="text-gray-600">
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Pale white skin: very light, extremely sensitive skin that burns but doesn’t tan
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    White skin: very sensitive skin that burns quickly and tans minimally
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Light rown skin: sensitive skin that sometimes burns and slowly tans to light brown
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Light brown skin: sensitive skin that sometimes burns and slowly tans to light brown
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Dark brown skin: very robust skin that rarely burns and tans well
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Deeply pigmented dark brown to black tone skin: very resistant skin tone
+                                </p>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl flex items-center justify-center">
+                        <img src="assets/images/Skin Types1.png" alt="Professional performing facial treatment"
+                            class="max-w-[550px] h-full object-cover" />
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="flex items-center justify-center my-2 relative">
+                        <img src="assets/images/Skin Types2.png" alt="" class="max-w-[550px]">
+                    </div>
+                    <div class="">
+                        <h1 class="text-[35px] md:text-[60px] font-bold font-playfair text-gray-800">
+                            Removing Tattoo Ink from Darker Skin Tones
+                        </h1>
+                        <span><img src="assets/images/gradiun line.png" alt="" class="mb-6"></span>
+                        <div class="space-y-3">
+                            <p class="text-gray-600">
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    So, does tattoo removal work on dark skin? 
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Yes, dark skin tattoo removal can be very effective, especially when done by an
+                                    experienced practitioner. 
+                                </p>
+                            </div>
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Laser tattoo removal is a safe and effective method to remove tattoos from dark
+                                    skin, but it’s important to pick a
+                                    reliable skin clinic that knows how to handle various skin types.
+                                </p>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="space-y-6">
+                        <h1 class="text-[35px] md:text-[60px] font-bold font-playfair text-gray-800">
+                            What Are Possible Side Effects of Laser Tattoo Removal for Darker Skin Tones?
+                        </h1>
+                        <span><img src="assets/images/gradiun line.png" alt=""></span>
+                        <div class="space-y-3">
+                            <p class="text-gray-600">
+                            <div class="flex">
+                                <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                                    Tattoo removal on dark skin is generally safe, but some of the rare side effects are
+                                    hyperpigmentation, or the darkening
+                                    of skin over time; hypopigmentation, the lightening of the skin in the area where
+                                    the tattoo was removed; and keloid
+                                    scars, which are raised scar tissues that develop around the treated area 
+                                </p>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="rounded-2xl flex items-center justify-center">
+                        <img src="assets/images/Skin Types3.png" alt="Professional performing facial treatment"
+                            class="max-w-[550px] h-full object-cover" />
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- injectors Section -->
+        <section class="py-16" style="margin-bottom: 100px;">
+            <div class="container mx-auto">
+                <div class="grid gap-8 items-center">
+                    <div class="space-y-6 bg-white shadow-lg p-8 px-12 rounded-2xl">
+                        <h2 class="font-playfair text-[60px] font-bold text-gray-800 text-left">Risk of Tattoo Removal
+                            for Dark Skin</h2>
+                        <span><img src="assets/images/gradiun line.png" alt=""></span>
+                        <div class="space-y-3 relative" style="padding-bottom: 168px;">
+                            <div class="text-gray-600">
+                                <div class="flex mt-3">
+                                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                    <p class="text-gray font-roboto ps-3 flex text-[20px]">
+                                        Laser tattoo removal on dark skin is generally safe, especially when done using
+                                        the right wavelength. As long as the
+                                        laser technician consults the Fitzpatrick scale to determine the amount of
+                                        melanin and the effective wavelength needed,
+                                        they should know the safest method for your treatment. 
+                                    </p>
+                                </div>
+                                <div class="flex mt-4">
+                                    <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
+                                    <p class="text-gray font-roboto mb-2 ps-3 flex text-[20px]">
+                                        Burning is a serious risk among darker skin types. Much like wearing a dark
+                                        shirt on a hot day, melanin’s capacity to
+                                        absorb heat can lead to the skin taking in too much energy from the laser in
+                                        dark skin tattoo removal. This can result
+                                        in skin discoloration and discomfort, plus long-term side effects. 
+                                    </p>
+                                </div>
+                                <div class="flex items-center">
+                                    <span><img src="assets/images/strat line.png" alt=""></span>
+                                    <p class="text-[#333333] font-roboto ps-4 mt-6 flex text-[20px]">
+                                        Laser tattoo removal on dark skin requires a careful, much more considered
+                                        approach than for clients with lighter skin.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center absolute" style="margin-top: 0px; top: 56%;">
+                                <span class="grid-cols-3">
+                                    <img src="assets/images/dark1.png" alt="" class="w-full h-full">
+                                </span>
+                                <p class="grid-cols-3">
+                                    <img src="assets/images/dark2.png" alt="" class="w-full h-full">
+                                </p>
+                                <div class="grid-cols-3">
+                                    <img src="assets/images/dark3.png" alt="" class="w-full h-full">
+                                </div>
+                                <div class="grid-cols-3">
+                                    <img src="assets/images/dark4.png" alt="" class="w-full h-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- injectors Section -->
+        <section class="py-16">
+            <div class="container mx-auto">
+                <div class="grid gap-8 flex items-center rounded">
+                    <div class="space-y-6 p-8 rounded rounded-full space-x-16" style="border: 2px solid transparent;
+                   border-image-source: linear-gradient(180deg, rgba(255, 255, 255, 0.58) 0%, rgba(253, 156, 138, 0.24) 100%);
+                   border-image-slice: 1;
+                   border-top: none;
+                   border-radius: 0 0 16px 16px;
+                   box-shadow: 0px -1px 6.1px 0px rgba(0, 0, 0, 0.1);">
+                        <h2 class="font-playfair text-4xl lg:text-[60px] font-bold text-gray-800 text-center">
+                            for Your Dark Skin Tattoo Removal Needs
+                        </h2>
+                        <span class="flex items-center justify-center m-0 p-0">
+                            <img src="assets/images/gradiun line.png" alt="">
+                        </span>
+                        <div class="space-y-3">
+                            <div class="text-gray-600">
+                                <div class="flex">
+                                    <p class="text-gray font-roboto ps-3 flex text-[20px] text-center">
+                                        If you want to know about the process and tattoo removal cost at LA Beauty Skin
+                                        Center,
+                                        visit our website or contact us directly for a consultation. We are a
+                                        high-quality
+                                        medical spa in Glendale that offers skin treatments that are very safe and
+                                        effective.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center" style="margin-top: 30px;">
+                                <button
+                                    class="flex bg-primary flex items-center justify-between text-white font-semibold p-4 rounded-lg transition duration-300">
+                                    <div class="bg-secondary px-2 rounded me-2">
+                                        <i class="fa-solid fa-angle-right text-white"></i>
+                                    </div>
+                                    <span class="font-[600] text-[18px] font-roboto">Make An Appointment Request</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Footer Section -->
+        <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
+            <div class="max-w-7xl mx-auto space-y-12">
+                <!-- Logo and Description -->
+                <div class="text-center">
+                    <img src="assets/images/footer logo top.png" alt="LA Beauty Skin Center" class="mx-auto"
+                        style="width: 110px; height: 116px;">
+                    <img src="assets/images/footer logo bottom.png" alt="LA Beauty Skin Center" class="mx-auto"
+                        style="width: 261px; height: 57px;">
+                    <p class="text-gray mx-auto text-[20px] pt-6">
+                        Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus egestas, finibus enim sit amet,
+                        mollis lorem. Sed
+                        a volutpat <br>
+                        velit pellet habitant tristique.
+                    </p>
+                </div>
+
+                <!-- Footer Grid -->
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Newsletter -->
+                    <div class="space-y-4">
+                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Newsletter</h3>
+                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+                        <p class="text-[20px] text-gray">Newsletter Sign Up</p>
+                        <div class="flex">
+                            <input type="email" placeholder="Email Address" class="text-[14px] ps-3 rounded-lg">
+                            <button
+                                class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300">
+                                <div class="bg-secondary px-2 me-1 rounded">
+                                    <i class="fa-solid fa-angle-right text-white"></i>
+                                </div>
+                                <span class="text-[14px] font-roboto font-normal">Sign Up</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div class="space-y-4">
+                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Quick Links</h3>
+                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">About Us</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Contact</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Sitemap</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Privacy Policy</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Accessibility
+                                    Statement</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Services -->
+                    <div class="space-y-4">
+                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Popular Services</h3>
+                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Laser Hair Removal</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Lip Augmentation</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Non-Surgical Rhinoplasty</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Jaw Line Shaping</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Cheek Augmentation/Shaping</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Double Chin Treatment</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Liquid Facelift</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">CoolSculpting</a></li>
+                            <li><a href="#" class="text-gray text-[18px] font-[400]">Morpheus8 Skin Resurfacing</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Follow Us -->
+                    <div class="space-y-4">
+                        <h3 class="font-[700] font-playfair text-[20px] text-gray-800">Follow Us</h3>
+                        <span><img src="assets/images/footer line.png" alt="" class="mt-2"></span>
+                        <div class="flex gap-2 items-center">
+                            <a href="https://www.facebook.com"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <i class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"></i>
+                            </a>
+                            <a href="https://www.twitter.com"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <i class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"></i>
+                            </a>
+                            <a href="https://www.instagram.com"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <i class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"></i>
+                            </a>
+                            <a href="https://mojapp.in/"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <i class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"></i>
+                            </a>
+                            <a href="https://www.youtube.com/"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <i class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"></i>
+                            </a>
+                            <a href="#"
+                                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                                <img src="assets/images/fan.png" alt="" class="w-4 flex items-center justify-center">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
+                    <p class="text-[20px] text-gray">Copyright © LA Beauty Skin Center</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const icon = mobileMenuButton.querySelector('i');
+
+    // Add event listener for toggle button
+    mobileMenuButton.addEventListener('click', function () {
+        // Toggle visibility of the menu
+        mobileMenu.classList.toggle('hidden');
+
+        // Toggle between icons
+        if (icon.classList.contains('fa-bars')) {
+            icon.classList.remove('fa-bars', 'text-[21px]', 'text-[#333333]'); // Remove old size and color
+            icon.classList.add('fa-xmark', 'text-[32px]', 'text-primary'); // Add new size and primary color
+        } else {
+            icon.classList.remove('fa-xmark', 'text-[32px]', 'text-primary'); // Remove new size and color
+            icon.classList.add('fa-bars', 'text-[21px]', 'text-[#333333]'); // Add old size and default color
+        }
+    });
+</script>
