@@ -36,7 +36,8 @@
             secondary: '#FDB0A1',
             mainbackground: '#FBFBFB',
             background: '#FFF5F4',
-            gray: '#7F7F7F'
+            gray: '#7F7F7F',
+            bthover: '#fbe7e4'
           },
           fontFamily: {
             playfair: ['Playfair Display', 'serif'],
@@ -88,14 +89,11 @@
               <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
             </nav>
             <button
-              class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
-              <div class="bg-secondary py-1 px-3 rounded me-2">
-                <i class="fa-solid fa-angle-right text-white"></i>
+              class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+              <div class="bg-secondary py-1 px-3 rounded-lg me-2 transition duration-300">
+                <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
               </div>
-              <a href="Contact.html">Online Appointment</a>
-            </button>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-600">
-              <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
+              <a href="#contactform" class="transition duration-300">Online Appointment</a>
             </button>
           </div>
           <div id="mobile-menu" class="hidden lg:hidden">
@@ -131,17 +129,17 @@
             </p>
             <div class="flex sm:flex-row  sm:space-x-6 mb-[50px] lg:mb-[160px] items-center justify-start space-x-6">
               <button
-                class="flex bg-primary items-center justify-center sm:justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
-                <div class="bg-secondary py-1 px-3 rounded me-3">
-                  <i class="fa-solid fa-angle-right text-white"></i>
+                class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+                <div class="bg-secondary py-1 px-3 rounded-lg me-2 transition duration-300">
+                  <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
                 </div>
-                <a href="Contact.html">Online Appointment</a>
+                <a href="#contactform" class="transition duration-300">Online Appointment</a>
               </button>
               <button class="flex items-center font-roboto justify-center sm:justify-start">
                 <div class="text-[#333333] border-2 me-2 border-primary px-3 py-2 rounded-full transition duration-300">
                   <i class="fa-solid fa-play text-primary"></i>
                 </div>
-                <a id="#video" class="text-base lg:text-[20px]">Our Video</a>
+                <a href="#video" class="text-base lg:text-[20px]">Our Video</a>
               </button>
             </div>
           </div>
@@ -162,10 +160,10 @@
     <section class="bg-mainbackground py-16 relative">
       <div class="container mx-auto px-4 flex flex-col md:flex-row lg:flex-row items-center gap-8">
         <!-- Left Side (Image Section) -->
-        <div class="md:w-1/2 flex items-center justify-center relative">
+        <div class="md:w-1/2 flex items-center lg:justify-start relative">
           <img src="assets/images/About img.png" alt="About Us Image" class="w-full max-w-[550px] z-10">
           <img src="assets/images/rangoli left.png" alt=""
-            class="absolute -bottom-10 -right-8 md:right-[16%] max-w-[100px] md:max-w-[150px] hidden lg:block">
+            class="absolute bottom-[20%] -right-8 md:right-[12%]  hidden lg:block">
         </div>
 
         <!-- Right Side (Content Section) -->
@@ -197,11 +195,11 @@
 
           <!-- Read More Button -->
           <button
-            class="flex bg-primary items-center justify-start text-white font-semibold px-3 py-2 lg:px-5 lg:py-4 rounded-lg transition duration-300 hover:bg-primary-dark mt-8">
-            <div class="bg-secondary py-2 px-4 rounded me-2">
-              <i class="fa-solid fa-angle-right text-white"></i>
+            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-100 mt-8 md:ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+            <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
+              <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
             </div>
-            <a href="About.html" class="text-[18px] font-[600] font-roboto">Read More</a>
+            <a href="About.html" class="text-[18px] font-roboto">Read More</a>
           </button>
         </div>
       </div>
@@ -277,14 +275,14 @@
           </div>
         </div>
 
-
-        <div class="flex items-center justify-center my-2 relative">
+        <a name="video" href="https://www.youtube.com/watch?v=1zUzyhHmhG0&pp=ygUVbGEgYmVhdXR5IHNraW4gY2VudGVy"
+          class="flex items-center justify-center my-2 relative">
           <img src="assets/images/skincare video.png" alt="" class="w-full h-auto">
-          <a id="#video">
+          <div>
             <img src="assets/images/video icon.png" alt=""
               class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[10%] pointer-events-none">
-          </a>
-        </div>
+          </div>
+        </a>
       </div>
     </section>
 
@@ -318,11 +316,11 @@
                     for Aesthetic Medicine. Dr. Karapetyan is a licensed and experienced medical professional.
                   </div>
                 </div>
-                <div class="bg-[#fbe7e4] py-3 w-full rounded-b-xl">
-                  <p
-                    class="text-[#FD9C8A] text-center text-sm md:text-base lg:text-[20px] font-roboto font-[400] break-words px-2">
+                <div class="bg-bthover py-3 w-full rounded-b-xl">
+                  <a href="https://labeautyskincenter.com/"
+                    class="text-primary text-center text-sm md:text-base lg:text-[20px] font-roboto font-[400] break-words px-2">
                     https://www.labeautyskincenter.com/about
-                  </p>
+                  </a>
                 </div>
 
               </div>
@@ -365,11 +363,12 @@
 
           <div class="flex lg:justify-center w-full">
             <button
-              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 md:ms-4">
-              <div class="bg-secondary py-1 px-3 rounded me-2">
-                <i class="fa-solid fa-angle-right text-white"></i>
+              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-100 mt-8 md:ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+              <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
+                <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
               </div>
-              <a href="Ourteam.html" class="text-[18px] font-roboto">View All</a>
+              <a href="Ourteam.html" class="text-[18px] font-roboto">View
+                All</a>
             </button>
           </div>
         </div>
@@ -414,11 +413,11 @@
               </p>
             </div>
             <button
-              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 ms-8">
-              <div class="bg-secondary py-1 px-3 rounded me-2">
-                <i class="fa-solid fa-angle-right text-white"></i>
+              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-100 mt-8 md:ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+              <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
+                <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
               </div>
-              <a href="Services.html" class="text-[18px] font-[600] font-roboto">View All</a>
+              <a href="Services.html" class="text-[18px] font-roboto">View All</a>
             </button>
           </div>
           <div class="rounded-2xl flex items-center lg:justify-end md:justify-center relative">
@@ -522,6 +521,7 @@
                 </div>
                 <a href="Blogdetail.html" class="text-[18px] font-[600] font-roboto text-primary">Read More</a>
               </button>
+
             </div>
           </div>
 
@@ -584,9 +584,9 @@
         <!-- View All Button -->
         <div class="text-center flex items-center lg:justify-center md:ps-4">
           <button
-            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-3 rounded-lg transition duration-300 my-4">
-            <div class="bg-secondary py-1 px-3 rounded me-2">
-              <i class="fa-solid fa-angle-right text-white"></i>
+            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-3 rounded-lg transition duration-100 mt-8 md:ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+            <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
+              <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
             </div>
             <a href="Blog.html" class="text-[18px] font-roboto">View All</a>
           </button>
@@ -704,7 +704,7 @@
     <section class="py-16 px-4 md:px-8 relative">
       <div class="container mx-auto grid md:grid-cols-1 lg:grid-cols-2 gap-12 flex items-center justify-center">
         <!-- Form Column -->
-        <div class="bg-white p-8 rounded-xl shadow-lg relative max-w-xl">
+        <a name="contactform" class="bg-white p-8 rounded-xl shadow-lg relative max-w-xl">
           <form class="space-y-6" style="z-index: 1000;">
             <div class="grid grid-cols-2 gap-4 items-start">
               <input type="text" placeholder="First Name"
@@ -729,9 +729,9 @@
             <!-- Placeholder for reCAPTCHA -->
             <div class="pt-6">
               <button
-                class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300">
-                <div class="bg-secondary px-3 rounded me-2">
-                  <i class="fa-solid fa-angle-right text-white"></i>
+                class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+                <div class="bg-secondary px-3 rounded me-2  transition duration-300">
+                  <i class="fa-solid fa-angle-right text-white  transition duration-300"></i>
                 </div>
                 <span class="text-[18px] font-roboto">Submit</span>
               </button>
@@ -739,7 +739,7 @@
           </form>
           <img src="assets/images/rangoli left.png" alt="" class="absolute top-28 hidden lg:block"
             style="left: 84%;z-index: -10;">
-        </div>
+        </a>
         <!-- Content Column -->
         <div class="space-y-6">
           <h2 class="text-3xl lg:text-[55px] font-playfair font-bold text-gray-800 leading-tight">
@@ -908,4 +908,5 @@
       icon.classList.add('fa-bars', 'text-[21px]', 'text-[#333333]'); // Add old size and default color
     }
   });
+
 </script>

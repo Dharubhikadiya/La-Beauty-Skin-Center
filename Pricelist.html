@@ -1,1888 +1,1269 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Updated Google Fonts Import -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Updated Google Fonts Import -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Other CSS imports -->
-    <link rel="stylesheet" href="assets/css/utilities.css" />
-    <link rel="stylesheet" href="assets/css/stylesheet.css" />
-    <link rel="stylesheet" href="assets/fonts/fonts.css" />
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet" />
 
-    <!-- Updated Tailwind Configuration -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-              primary: "#FD9C8A",
-              secondary: "#FDB0A1",
-              mainbackground: "#FBFBFB",
-              background: "#FFF5F4",
-              gray: "#7F7F7F",
-            },
-            fontFamily: {
-              playfair: ["Playfair Display", "serif"],
-              roboto: ["Roboto", "sans-serif"],
-              dansing: ["Dancing Script", "cursive"],
-              sans: ["IBM Plex Sans", "sans-serif"],
-            },
+  <!-- Other CSS imports -->
+  <link rel="stylesheet" href="assets/css/utilities.css" />
+  <link rel="stylesheet" href="assets/css/stylesheet.css" />
+  <link rel="stylesheet" href="assets/fonts/fonts.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+  <!-- Updated Tailwind Configuration -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+            primary: "#FD9C8A",
+            secondary: "#FDB0A1",
+            mainbackground: "#FBFBFB",
+            background: "#FFF5F4",
+            gray: "#7F7F7F",
+            bthover: '#fbe7e4',
+          },
+          fontFamily: {
+            playfair: ["Playfair Display", "serif"],
+            roboto: ["Roboto", "sans-serif"],
+            dansing: ["Dancing Script", "cursive"],
+            sans: ["IBM Plex Sans", "sans-serif"],
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <!-- Custom styles to ensure Playfair Display works -->
-    <style>
-      .font-playfair {
-        font-family: "Playfair Display", serif !important;
-      }
-    </style>
-  </head>
+  <!-- Custom styles to ensure Playfair Display works -->
+  <style>
+    .font-playfair {
+      font-family: "Playfair Display", serif !important;
+    }
+  </style>
+</head>
 
-  <body class="bg-mainbackground">
-    <div>
-      <section
-        class="bg-background relative bg-center bg-no-repeat bg-top"
-        style="
+<body class="bg-mainbackground">
+  <div>
+    <section class="bg-background relative bg-center bg-no-repeat bg-top" style="
           background-image: url('assets/images/background-img-main.png');
           background-size: cover;
-        "
-      >
-        <!-- Header -->
-        <header class="shadow-sm">
-          <div class="container mx-auto flex justify-between items-center p-4">
-            <img
-              src="assets/images/logo.png"
-              alt="Logo"
-              class="h-12 max-w-[125px]"
-            />
-            <nav class="hidden lg:flex space-x-4">
-              <a
-                href="index.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Home</a
-              >
-              <a
-                href="About.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >About Us</a
-              >
-              <a
-                href="Services.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Services</a
-              >
-              <a
-                href="Pricelist.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Price List</a
-              >
-              <a
-                href="Monthlyspecials.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Monthly Specials</a
-              >
-              <a
-                href="Blog.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Blog</a
-              >
-              <a
-                href="Contact.html"
-                class="text-[#7F7F7F] hover:text-primary font-normal"
-                >Contact</a
-              >
-            </nav>
-            <button
-              class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300"
-            >
-              <div class="bg-secondary py-1 px-3 rounded me-2">
-                <i class="fa-solid fa-angle-right text-white"></i>
-              </div>
-              <span>Online Appointment</span>
-            </button>
-            <button id="mobile-menu-button" class="lg:hidden text-gray-600">
-              <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
-            </button>
-          </div>
-          <div id="mobile-menu" class="hidden lg:hidden">
-            <nav class="flex flex-col items-center space-y-4 py-4">
-              <a
-                href="index.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >Home</a
-              >
-              <a
-                href="About.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >About Us</a
-              >
-              <a
-                href="Services.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >Services</a
-              >
-              <a
-                href="Pricelist.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >Price List</a
-              >
-              <a
-                href="Monthlyspecials.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >Monthly Specials</a
-              >
-              <a
-                href="Blog.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary"
-                >Blog</a
-              >
-              <a
-                href="Contact.html"
-                class="text-[#7F7F7F] text-[24px] py-1 pb-12 font-[400] font-roboto hover:text-primary"
-                >Contact</a
-              >
-            </nav>
-          </div>
-        </header>
-
-        <!-- Hero Section with fixed Playfair font -->
-        <section
-          class="container mx-auto flex flex-col md:flex-row items-center lg:p-8 px-8 pt-8"
-        >
-          <div class="md:w-1/2">
-            <h1
-              class="font-playfair font-bold text-gray-800 text-4xl lg:text-[70px] leading-tight mb-2"
-            >
-              Price List
-            </h1>
-            <span><img src="assets/images/gradiun line.png" alt="" /></span>
-            <p class="text-gray mt-4 text-[20px]">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
-            </p>
-            <div class="flex space-x-4 mt-8 items-center">
-              <span>
-                <img src="assets/images/home.png" alt="" class="w-[22px]" />
-              </span>
-              <span>
-                <img
-                  src="assets/images/right arrow.png"
-                  alt=""
-                  class="w-[12px]"
-                />
-              </span>
-              <span class="font-[500] text-[20px] text-primary"
-                >Price List</span
-              >
+        ">
+      <!-- Header -->
+      <header class="shadow-sm">
+        <div class="container mx-auto flex justify-between items-center p-4">
+          <img src="assets/images/logo.png" alt="Logo" class="h-12 max-w-[125px]" />
+          <nav class="hidden lg:flex space-x-4">
+            <a href="index.html" class="text-[#7F7F7F] hover:text-primary font-normal">Home</a>
+            <a href="About.html" class="text-[#7F7F7F] hover:text-primary font-normal">About Us</a>
+            <a href="Services.html" class="text-[#7F7F7F] hover:text-primary font-normal">Services</a>
+            <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price List</a>
+            <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly Specials</a>
+            <a href="Blog.html" class="text-[#7F7F7F] hover:text-primary font-normal">Blog</a>
+            <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
+          </nav>
+          <button
+            class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+            <div class="bg-secondary py-1 px-3 rounded-lg me-2 transition duration-300">
+              <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
             </div>
-          </div>
-          <div class="md:w-1/2 flex items-center justify-center lg:pt-[80px]">
-            <img
-              src="assets/images/pricelist page slider.png"
-              alt="Hero Image"
-              class="w-full max-w-[1013px] lg:me-[120px]"
-            />
-          </div>
-        </section>
-        <img
-          src="assets/images/smoke.png"
-          alt=""
-          class="absolute bottom-0 w-full object-cover h-[90px] md:h-[200px] lg:h-[140px] z-[100]"
-        />
-        <img
-          src="assets/images/long leafe.png"
-          alt=""
-          class="absolute bottom-[0px] max-w-[301px] h-[583] hidden lg:block"
-        />
-      </section>
-
-      <!-- Laser Procedures Section -->
-      <section class="bg-mainbackground py-16">
-        <div class="container mx-auto px-4">
-          <div class="bg-background rounded-3xl">
-            <div class="flex flex-col lg:flex-row items-start">
-              <!-- Image Column -->
-              <div class="w-full lg:w-5/12 relative">
-                <div class="transform lg:translate-y-[0px]">
-                  <img
-                    src="assets/images/pricelist second sec.png"
-                    alt="Professional performing aesthetic treatment"
-                    class="w-full mx-auto"
-                  />
-                </div>
-              </div>
-
-              <!-- Content Column -->
-              <div class="w-full lg:w-7/12 py-6 lg:py-12 px-4">
-                <h2
-                  class="font-playfair text-2xl md:text-4xl lg:text-[43px] font-bold text-gray-800 mb-6 leading-normal"
-                >
-                  Affordable Prices For Transformative Aesthetic Treatments
-                </h2>
-
-                <div class="flex items-start gap-4">
-                  <img
-                    src="assets/images/Right Icon.png"
-                    alt=""
-                    class="w-[30px] mt-1.5 flex-shrink-0"
-                  />
-                  <p
-                    class="text-gray font-roboto text-base md:text-lg lg:text-[20px]"
-                  >
-                    LA Beauty Skin Center offers state-of-the-art treatments
-                    like laser hair removal, facial sculpting with dermal
-                    fillers, body sculpting with Coolsculpting, non-surgical
-                    rhinoplasty and lip augmentation, rejuvenating facials,
-                    chemical peels, anti-aging wrinkle prevention treatment with
-                    Botox and other neuromodulators, all at affordable prices.
-                    Located in Glendale and Toluca Lake, we believe that
-                    everyone should have access to the best treatments modern
-                    aesthetic medicine can offer so that they can look their
-                    best and feel confident.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+            <a href="#contactform" class="transition duration-300">Online Appointment</a>
+          </button>
+          <button id="mobile-menu-button" class="lg:hidden text-gray-600">
+            <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
+          </button>
         </div>
-      </section>
+        <div id="mobile-menu" class="hidden lg:hidden">
+          <nav class="flex flex-col items-center space-y-4 py-4">
+            <a href="index.html"
+              class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Home</a>
+            <a href="About.html" class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">About
+              Us</a>
+            <a href="Services.html"
+              class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Services</a>
+            <a href="Pricelist.html"
+              class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Price List</a>
+            <a href="Monthlyspecials.html"
+              class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Monthly Specials</a>
+            <a href="Blog.html"
+              class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto hover:text-primary">Blog</a>
+            <a href="Contact.html"
+              class="text-[#7F7F7F] text-[24px] py-1 pb-12 font-[400] font-roboto hover:text-primary">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-      <!-- Skin Treatment Section -->
-      <section class="lg:py-10">
-        <div class="container mx-auto text-center px-4">
-          <h2
-            class="font-playfair text-4xl lg:text-[40px] font-bold text-gray-800 text-left leading-normal"
-          >
-            Laser Procedures And Skin Treatment
-          </h2>
-          <span class="flex items-start justify-start"
-            ><img
-              src="assets/images/big gradiun line.png"
-              alt=""
-              class="pb-5 pt-3"
-          /></span>
-          <div class="flex">
+      <!-- Hero Section with fixed Playfair font -->
+      <section class="container mx-auto flex flex-col md:flex-row items-center lg:p-8 px-8 pt-8">
+        <div class="md:w-1/2">
+          <h1 class="font-playfair font-bold text-gray-800 text-4xl lg:text-[70px] leading-tight mb-2">
+            Price List
+          </h1>
+          <span><img src="assets/images/gradiun line.png" alt="" /></span>
+          <p class="text-gray mt-4 text-[20px]">
+            It is a long established fact that a reader will be distracted by
+            the readable content of a page when looking at its layout.
+          </p>
+          <div class="flex space-x-4 mt-8 items-center">
             <span>
-              <img src="assets/images/Right Icon.png" class="max-w-[30px]"
-            /></span>
-            <p
-              class="text-gray font-roboto mb-3 flex text-[20px] ps-3 text-left"
-            >
-              Choose from a range of different treatments for both men and
-              women. From full face to specific areas, you can finally afford to
-              tackle those problem areas that make you feel less than stellar.
-              Men and women alike deserve to feel confident in the skin they’re
-              in. That’s why our med spa menu includes affordable monthly
-              packages that include five sessions per month. The prices at LA
-              Beauty Skin Center are some of the best in the business.
-            </p>
+              <img src="assets/images/home.png" alt="" class="w-[22px]" />
+            </span>
+            <span>
+              <img src="assets/images/right arrow.png" alt="" class="w-[12px]" />
+            </span>
+            <span class="font-[500] text-[20px] text-primary">Price List</span>
           </div>
         </div>
+        <div class="md:w-1/2 flex items-center justify-center lg:pt-[80px]">
+          <img src="assets/images/pricelist page slider.png" alt="Hero Image"
+            class="w-full max-w-[1013px] lg:me-[120px]" />
+        </div>
+      </section>
+      <img src="assets/images/smoke.png" alt=""
+        class="absolute bottom-0 w-full object-cover h-[90px] md:h-[200px] lg:h-[140px] z-[100]" />
+      <img src="assets/images/long leafe.png" alt=""
+        class="absolute bottom-[0px] max-w-[301px] h-[583] hidden lg:block" />
+    </section>
 
-        <div class="container mx-auto">
-          <!-- Pricing Section -->
-          <div class="py-10 px-4">
-            <!-- Face Section -->
+    <!-- Laser Procedures Section -->
+    <section class="bg-mainbackground py-16">
+      <div class="container mx-auto px-4">
+        <div class="bg-background rounded-3xl">
+          <div class="flex flex-col lg:flex-row items-start">
+            <!-- Image Column -->
+            <div class="w-full lg:w-5/12 relative">
+              <div class="transform lg:translate-y-[0px]">
+                <img src="assets/images/pricelist second sec.png" alt="Professional performing aesthetic treatment"
+                  class="w-full mx-auto" />
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="w-full lg:w-7/12 py-6 lg:py-12 px-4">
+              <h2 class="font-playfair text-2xl md:text-4xl lg:text-[43px] font-bold text-gray-800 mb-6 leading-normal"
+                style="line-height: 55px;">
+                Affordable Prices For Transformative Aesthetic Treatments
+              </h2>
+
+              <div class="flex items-start gap-4">
+                <img src="assets/images/Right Icon.png" alt="" class="w-[30px] mt-1.5 flex-shrink-0" />
+                <p class="text-gray font-roboto text-base md:text-lg lg:text-[20px]">
+                  LA Beauty Skin Center offers state-of-the-art treatments
+                  like laser hair removal, facial sculpting with dermal
+                  fillers, body sculpting with Coolsculpting, non-surgical
+                  rhinoplasty and lip augmentation, rejuvenating facials,
+                  chemical peels, anti-aging wrinkle prevention treatment with
+                  Botox and other neuromodulators, all at affordable prices.
+                  Located in Glendale and Toluca Lake, we believe that
+                  everyone should have access to the best treatments modern
+                  aesthetic medicine can offer so that they can look their
+                  best and feel confident.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skin Treatment Section -->
+    <section class="lg:py-10">
+      <div class="container mx-auto text-center px-4">
+        <h2 class="font-playfair text-4xl lg:text-[40px] font-bold text-gray-800 text-left leading-normal">
+          Laser Procedures And Skin Treatment
+        </h2>
+        <span class="flex items-start justify-start"><img src="assets/images/big gradiun line.png" alt=""
+            class="pb-5 pt-3" /></span>
+        <div class="flex">
+          <span>
+            <img src="assets/images/Right Icon.png" class="max-w-[30px]" /></span>
+          <p class="text-gray font-roboto mb-3 flex text-[20px] ps-3 text-left">
+            Choose from a range of different treatments for both men and
+            women. From full face to specific areas, you can finally afford to
+            tackle those problem areas that make you feel less than stellar.
+            Men and women alike deserve to feel confident in the skin they’re
+            in. That’s why our med spa menu includes affordable monthly
+            packages that include five sessions per month. The prices at LA
+            Beauty Skin Center are some of the best in the business.
+          </p>
+        </div>
+      </div>
+
+      <div class="container mx-auto">
+        <!-- Pricing Section -->
+        <div class="py-10 px-4">
+          <!-- Face Section -->
+          <div>
+            <button
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-1">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                Laser Hair Removal Prices
+              </h2>
+              <i class="fa-solid fa-angle-up text-3xl text-primary"></i>
+            </button>
+
+            <!-- Face Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      FACE
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lip
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $15
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Chin
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $15
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial face
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full face
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Hair line
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Ears
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $15
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $15
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Arms Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      ARMS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Under arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $22
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $88
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Hands and fingers
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Fingers only
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Bikini Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      BIKINI
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $38
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $152
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Buttocks
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Legs Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      LEGS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $150
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $170
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $600
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $680
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $85
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $340
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $400
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Feet and/or toes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- chest Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[30px] font-playfair font-bold w-1/4">
+                      CHEST AND ABDOMEN
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper chest
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial chest
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full abdomen
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower abdomen
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- back Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      BACK
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $155
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $18
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $78
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Touch Pricing Table -->
+            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      TOUCH UP
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      5 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      10 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $240
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $240
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      15 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $90
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $90
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $360
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $360
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <div>
               <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-1"
-              >
-                <h2
-                  class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                >
-                  Laser Hair Removal Prices
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  LASER VEIN TREATMENTS
                 </h2>
-                <i class="fa-solid fa-angle-up text-3xl text-primary"></i>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
               </button>
 
-              <!-- Face Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        FACE
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Lip
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $10
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $15
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Chin
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $10
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $15
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Partial face
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $35
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $140
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full face
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $30
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $120
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Hair line
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $25
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $30
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $100
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $120
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Ears
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $15
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $15
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  INJECTABLES PRICES
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- Arms Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        ARMS
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full arms
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $95
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $320
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $380
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Half arms
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $50
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $200
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Under arms
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $22
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $88
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Hands and fingers
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Fingers only
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $10
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $10
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  SCULPTRA FOR FACE
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- Bikini Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        BIKINI
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full bikini
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $38
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $75
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $152
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $300
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Half bikini
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $35
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $140
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Partial bikini
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $30
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $50
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $120
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $200
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Buttocks
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $35
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $140
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  SCULPTRA BUTT LIFT
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- Legs Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        LEGS
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full legs
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $150
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $170
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $600
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $680
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Upper legs
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $85
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $100
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $340
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $400
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Lower legs
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $75
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $95
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $300
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $380
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Feet and/or toes
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $25
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $25
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $100
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $100
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  RADIESSE BUTT (PER VIAL)
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- chest Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[30px] font-playfair font-bold w-1/4"
-                      >
-                        CHEST AND ABDOMEN
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Upper chest
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $320
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Partial chest
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full abdomen
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $75
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $300
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Lower abdomen
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $20
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $40
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $80
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  THREAD LIFT
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- back Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        BACK
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Full back
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $35
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $155
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $160
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $320
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Lower back
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $18
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $35
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        --
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        --
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        Upper back
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $78
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        --
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        --
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  SUN SPOT REMOVAL
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <!-- Touch Pricing Table -->
-              <div
-                class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4"
-              >
-                <table class="w-full min-w-[600px]">
-                  <thead>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <th
-                        class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4"
-                      >
-                        TOUCH UP
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Female
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Male
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 F
-                      </th>
-                      <th
-                        class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6"
-                      >
-                        Package of 5 M
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        5 minutes
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $30
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $30
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $120
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $320
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        10 minutes
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $60
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $240
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $240
-                      </td>
-                    </tr>
-                    <tr class="border-b border-[#EAEAEA]">
-                      <td
-                        class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4"
-                      >
-                        15 minutes
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $90
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $90
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $360
-                      </td>
-                      <td
-                        class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5"
-                      >
-                        $360
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  COOLSCULPTING PRICES
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-              <div>
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    LASER VEIN TREATMENTS
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  COOLTONE
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    INJECTABLES PRICES
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  PRP (PLATELET RICH PLASMA)
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    SCULPTRA FOR FACE
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  LUMECCA IPL
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    SCULPTRA BUTT LIFT
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  MORPHEUS8
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    RADIESSE BUTT (PER VIAL)
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  FORMA
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    THREAD LIFT
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  PEELS
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    SUN SPOT REMOVAL
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  FACIALS
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    COOLSCULPTING PRICES
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  PICOSURE PRO SKIN REJUVANATION
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
 
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    COOLTONE
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    PRP (PLATELET RICH PLASMA)
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    LUMECCA IPL
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    MORPHEUS8
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    FORMA
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    PEELS
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    FACIALS
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    PICOSURE PRO SKIN REJUVANATION
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-
-                <button
-                  class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4"
-                >
-                  <h2
-                    class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight"
-                  >
-                    TATTOO REMOVAL PRICE LIST
-                  </h2>
-                  <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-                </button>
-              </div>
+              <button
+                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                  TATTOO REMOVAL PRICE LIST
+                </h2>
+                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- Contact Section -->
-      <section class="lg:py-16 px-4 md:px-8">
-        <div
-          class="container mx-auto grid md:grid-cols-2 gap-12 flex items-center justify-center"
-        >
-          <!-- Form Column -->
-          <div class="bg-white p-8 rounded-xl shadow-lg relative max-w-xl">
-            <form class="space-y-6" style="z-index: 1000">
-              <div class="grid grid-cols-2 gap-4 items-start">
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]"
-                />
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]"
-                />
+    <!-- Contact Section -->
+    <section class="lg:py-16 px-4 md:px-8">
+      <div class="container mx-auto grid md:grid-cols-2 gap-12 flex items-center justify-center">
+        <!-- Form Column -->
+        <a name="contactform3" class="bg-white p-8 rounded-xl shadow-lg relative max-w-xl">
+          <form class="space-y-6" style="z-index: 1000">
+            <div class="grid grid-cols-2 gap-4 items-start">
+              <input type="text" placeholder="First Name"
+                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]" />
+              <input type="text" placeholder="Last Name"
+                class="p-3 ps-5 text-[14px] font-roboto font-[400] text-[#9E9E9E] rounded-lg bg-[#F5F5F5]" />
+            </div>
+            <input type="email" placeholder="Email"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]" />
+            <input type="tel" placeholder="Phone Number"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]" />
+            <textarea placeholder="Inquiry" rows="4"
+              class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"></textarea>
+            <div class="flex mb-9">
+              <div class="flex items-center gap-2 border rounded-xl shadow-lg border-[#EAEAEA] p-4 px-9">
+                <input type="checkbox" id="human" class="rounded" />
+                <label for="human" class="text-[16px] font-[400] text-gray font-roboto">I am human</label>
+                <img src="assets/images/i-am-human.png" alt="" class="ms-20" />
               </div>
-              <input
-                type="email"
-                placeholder="Email"
-                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
-              />
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
-              />
-              <textarea
-                placeholder="Inquiry"
-                rows="4"
-                class="w-full p-3 ps-5 rounded-lg font-roboto font-[400] text-[#9E9E9E] bg-[#F5F5F5]"
-              ></textarea>
-              <div class="flex mb-9">
-                <div
-                  class="flex items-center gap-2 border rounded-xl shadow-lg border-[#EAEAEA] p-4 px-9"
-                >
-                  <input type="checkbox" id="human" class="rounded" />
-                  <label
-                    for="human"
-                    class="text-[16px] font-[400] text-gray font-roboto"
-                    >I am human</label
-                  >
-                  <img
-                    src="assets/images/i-am-human.png"
-                    alt=""
-                    class="ms-20"
-                  />
+            </div>
+            <!-- Placeholder for reCAPTCHA -->
+            <div class="pt-6">
+              <button
+                class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+                <div class="bg-secondary px-3 rounded me-2  transition duration-300">
+                  <i class="fa-solid fa-angle-right text-white  transition duration-300"></i>
                 </div>
-              </div>
-              <!-- Placeholder for reCAPTCHA -->
-              <div class="pt-6">
-                <button
-                  class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300"
-                >
-                  <div class="bg-secondary px-3 rounded me-2">
-                    <i class="fa-solid fa-angle-right text-white"></i>
-                  </div>
-                  <span class="text-[18px] font-roboto">Submit</span>
-                </button>
-              </div>
-            </form>
-            <img
-              src="assets/images/rangoli left.png"
-              alt=""
-              class="absolute top-28 hidden lg:block"
-              style="left: 84%; z-index: -10"
-            />
-          </div>
-          <!-- Content Column -->
-          <div class="space-y-6">
-            <h2
-              class="text-4xl lg:text-[60px] font-playfair font-bold text-gray-800 leading-tight"
-            >
-              Contact LA Beauty Skin Center
-            </h2>
-            <span
-              ><img src="assets/images/gradiun line.png" alt="" class="mt-3"
-            /></span>
-            <span><img src="assets/images/" alt="" /></span>
-            <div class="flex mt-0">
-              <span>
-                <img src="assets/images/Right Icon.png" class="max-w-[30px]"
-              /></span>
-              <p class="text-gray font-roboto flex ps-3 text-[20px]">
-                We look forward to hearing from you and helping you achieve your
-                beauty goals! You can reach us at the form below or by calling
-                us at 818-888-0001. You may also email us at
-                Info@LABeautyskincenter.com
-              </p>
+                <span class="text-[18px] font-roboto">Submit</span>
+              </button>
             </div>
-            <div class="flex">
-              <p>
-                <img
-                  src="assets/images/Right Icon.png"
-                  class="max-w-[30px] mt-1"
-                />
-              </p>
-              <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
-                Aenean pulvinar laoreet tellus ut tincidunt. Praesent a lectus
-                egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
-                velit. Pellentesque habitant morbi Vestibulum mattis gravida
-                odio tristique.Aenean pulvinar laoreet tellus ut tincidunt.
-                Praesent a lectus egestas, finibus enim sit amet, mollis lorem.
-                Sed a volutpat velit. Pellentesque habitant morbi Vestibulum
-                mattis gravida odio tristique.
-              </p>
-            </div>
+          </form>
+          <img src="assets/images/rangoli left.png" alt="" class="absolute top-28 hidden lg:block"
+            style="left: 84%; z-index: -10" />
+        </a>
+        <!-- Content Column -->
+        <div class="space-y-6">
+          <h2 class="text-4xl lg:text-[60px] font-playfair font-bold text-gray-800 leading-tight">
+            Contact LA Beauty Skin Center
+          </h2>
+          <span><img src="assets/images/gradiun line.png" alt="" class="mt-3" /></span>
+          <span><img src="assets/images/" alt="" /></span>
+          <div class="flex mt-0">
+            <span>
+              <img src="assets/images/Right Icon.png" class="max-w-[30px]" /></span>
+            <p class="text-gray font-roboto flex ps-3 text-[20px]">
+              We look forward to hearing from you and helping you achieve your
+              beauty goals! You can reach us at the form below or by calling
+              us at 818-888-0001. You may also email us at
+              Info@LABeautyskincenter.com
+            </p>
           </div>
-        </div>
-      </section>
-
-      <!-- Footer Section -->
-      <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
-        <div class="max-w-7xl mx-auto space-y-12">
-          <!-- Logo and Description -->
-          <div class="text-center">
-            <img
-              src="assets/images/footer logo top.png"
-              alt="LA Beauty Skin Center"
-              class="mx-auto"
-              style="width: 110px; height: 116px"
-            />
-            <img
-              src="assets/images/footer logo bottom.png"
-              alt="LA Beauty Skin Center"
-              class="mx-auto"
-              style="width: 261px; height: 57px"
-            />
-            <p class="text-gray mx-auto text-[20px] pt-6">
-              Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus
+          <div class="flex">
+            <p>
+              <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1" />
+            </p>
+            <p class="text-gray font-roboto mb-2 flex ps-3 text-[20px]">
+              Aenean pulvinar laoreet tellus ut tincidunt. Praesent a lectus
               egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
-              <br />
-              velit pellet habitant tristique.
-            </p>
-          </div>
-
-          <!-- Footer Grid -->
-          <div class="grid md:grid-cols-4 gap-8">
-            <!-- Newsletter -->
-            <div class="space-y-4">
-              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
-                Newsletter
-              </h3>
-              <span
-                ><img src="assets/images/footer line.png" alt="" class="mt-2"
-              /></span>
-              <p class="text-[20px] text-gray">Newsletter Sign Up</p>
-              <div class="flex">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  class="text-[14px] ps-3 rounded-lg"
-                />
-                <button
-                  class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300"
-                >
-                  <div class="bg-secondary px-2 me-1 rounded">
-                    <i class="fa-solid fa-angle-right text-white"></i>
-                  </div>
-                  <span class="text-[14px] font-roboto font-normal"
-                    >Sign Up</span
-                  >
-                </button>
-              </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="space-y-4">
-              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
-                Quick Links
-              </h3>
-              <span
-                ><img src="assets/images/footer line.png" alt="" class="mt-2"
-              /></span>
-              <ul class="space-y-2">
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >About Us</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Contact</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Sitemap</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Privacy Policy</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Accessibility Statement</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Popular Services -->
-            <div class="space-y-4">
-              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
-                Popular Services
-              </h3>
-              <span
-                ><img src="assets/images/footer line.png" alt="" class="mt-2"
-              /></span>
-              <ul class="space-y-2">
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Laser Hair Removal</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Lip Augmentation</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Non-Surgical Rhinoplasty</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Jaw Line Shaping</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Cheek Augmentation/Shaping</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Double Chin Treatment</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Liquid Facelift</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >CoolSculpting</a
-                  >
-                </li>
-                <li>
-                  <a href="#" class="text-gray text-[18px] font-[400]"
-                    >Morpheus8 Skin Resurfacing</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Follow Us -->
-            <div class="space-y-4">
-              <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
-                Follow Us
-              </h3>
-              <span
-                ><img src="assets/images/footer line.png" alt="" class="mt-2"
-              /></span>
-              <div class="flex gap-2 items-center">
-                <a href="https://www.facebook.com"
-                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <i class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"></i>
-                </a>
-                <a href="https://www.twitter.com"
-                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <i class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"></i>
-                </a>
-                <a href="https://www.instagram.com"
-                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <i class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"></i>
-                </a>
-                <a href="https://mojapp.in/"
-                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <i class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"></i>
-                </a>
-                <a href="https://www.youtube.com/"
-                  class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <i class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"></i>
-                </a>
-                <a href="#" class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
-                  <img src="assets/images/fan.png" alt="" class="w-4 flex items-center justify-center">
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Copyright -->
-          <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
-            <p class="text-[20px] text-gray">
-              Copyright © LA Beauty Skin Center
+              velit. Pellentesque habitant morbi Vestibulum mattis gravida
+              odio tristique.Aenean pulvinar laoreet tellus ut tincidunt.
+              Praesent a lectus egestas, finibus enim sit amet, mollis lorem.
+              Sed a volutpat velit. Pellentesque habitant morbi Vestibulum
+              mattis gravida odio tristique.
             </p>
           </div>
         </div>
-      </footer>
-    </div>
-  </body>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
+      <div class="max-w-7xl mx-auto space-y-12">
+        <!-- Logo and Description -->
+        <div class="text-center">
+          <img src="assets/images/footer logo top.png" alt="LA Beauty Skin Center" class="mx-auto"
+            style="width: 110px; height: 116px" />
+          <img src="assets/images/footer logo bottom.png" alt="LA Beauty Skin Center" class="mx-auto"
+            style="width: 261px; height: 57px" />
+          <p class="text-gray mx-auto text-[20px] pt-6">
+            Aenean pulvinar laoreet tellus ut tinct. Praesent a lectus
+            egestas, finibus enim sit amet, mollis lorem. Sed a volutpat
+            <br />
+            velit pellet habitant tristique.
+          </p>
+        </div>
+
+        <!-- Footer Grid -->
+        <div class="grid md:grid-cols-4 gap-8">
+          <!-- Newsletter -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+              Newsletter
+            </h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2" /></span>
+            <p class="text-[20px] text-gray">Newsletter Sign Up</p>
+            <div class="flex">
+              <input type="email" placeholder="Email Address" class="text-[14px] ps-3 rounded-lg" />
+              <button
+                class="bg-primary flex items-center justify-center text-white py-2 px-3 font-semibold rounded-lg transition duration-300">
+                <div class="bg-secondary px-2 me-1 rounded">
+                  <i class="fa-solid fa-angle-right text-white"></i>
+                </div>
+                <span class="text-[14px] font-roboto font-normal">Sign Up</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+              Quick Links
+            </h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2" /></span>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">About Us</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Contact</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Sitemap</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Accessibility Statement</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Popular Services -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+              Popular Services
+            </h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2" /></span>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Laser Hair Removal</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Lip Augmentation</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Non-Surgical Rhinoplasty</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Jaw Line Shaping</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Cheek Augmentation/Shaping</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Double Chin Treatment</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Liquid Facelift</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">CoolSculpting</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray text-[18px] font-[400]">Morpheus8 Skin Resurfacing</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Follow Us -->
+          <div class="space-y-4">
+            <h3 class="font-[700] font-playfair text-[20px] text-gray-800">
+              Follow Us
+            </h3>
+            <span><img src="assets/images/footer line.png" alt="" class="mt-2" /></span>
+            <div class="flex gap-2 items-center">
+              <a href="https://www.facebook.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-facebook-f w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.twitter.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-twitter w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.instagram.com"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-instagram w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://mojapp.in/"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-tiktok w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="https://www.youtube.com/"
+                class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <i class="fa-brands fa-youtube w-7 h-7 flex items-center justify-center"></i>
+              </a>
+              <a href="#" class="bg-primary w-10 h-10 text-white p-2 rounded-full flex items-center justify-center">
+                <img src="assets/images/fan.png" alt="" class="w-4 flex items-center justify-center">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-gray-600 pt-4 border-t border-[#ffe5e1]">
+          <p class="text-[20px] text-gray">
+            Copyright © LA Beauty Skin Center
+          </p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
 </html>
 
 <script>

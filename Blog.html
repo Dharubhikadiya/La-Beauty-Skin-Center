@@ -41,6 +41,7 @@
             mainbackground: "#FBFBFB",
             background: "#FFF5F4",
             gray: "#7F7F7F",
+            bthover: '#fbe7e4',
           },
           fontFamily: {
             playfair: ["Playfair Display", "serif"],
@@ -81,11 +82,11 @@
             <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
           </nav>
           <button
-            class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded transition duration-300">
-            <div class="bg-secondary py-1 px-3 rounded me-2">
-              <i class="fa-solid fa-angle-right text-white"></i>
+            class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+            <div class="bg-secondary py-1 px-3 rounded-lg me-2 transition duration-300">
+              <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
             </div>
-            <span>Online Appointment</span>
+            <a href="#contactform" class="transition duration-300">Online Appointment</a>
           </button>
           <button id="mobile-menu-button" class="lg:hidden text-gray-600">
             <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
@@ -419,7 +420,7 @@
 
       <div class="flex items-center justify-center mt-14">
         <button
-          class="flex bg-primary items-center justify-between text-white font-semibold p-3 rounded transition duration-300">
+          class="flex bg-primary items-center justify-between text-white font-semibold p-3 rounded transition duration-300 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
           <div class="bg-secondary py-1 px-3 rounded me-2">
             <i class="fa-solid fa-angle-right text-white"></i>
           </div>
