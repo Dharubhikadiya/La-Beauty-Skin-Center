@@ -153,7 +153,7 @@
             <div class="w-full lg:w-5/12 relative">
               <div class="transform lg:translate-y-[0px]">
                 <img src="assets/images/pricelist second sec.png" alt="Professional performing aesthetic treatment"
-                  class="w-full mx-auto" />
+                  class="w-full mx-auto transition-transform duration-300 ease-in-out hover:scale-105" />
               </div>
             </div>
 
@@ -209,149 +209,86 @@
       </div>
 
       <div class="container mx-auto">
-        <!-- Pricing Section -->
         <div class="py-10 px-4">
           <!-- Face Section -->
           <div>
-            <button
+            <button onclick="toggleSection('section1')"
               class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-1">
               <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
                 Laser Hair Removal Prices
               </h2>
-              <i class="fa-solid fa-angle-up text-3xl text-primary"></i>
+              <i id="icon-section1" class="fa-solid fa-angle-down text-3xl text-primary"></i>
             </button>
-
             <!-- Face Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <div id="section1" class=" overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
-                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
-                      FACE
-                    </th>
-                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
-                      Female
-                    </th>
-                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
-                      Male
-                    </th>
-                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
-                      Package of 5 F
-                    </th>
-                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
-                      Package of 5 M
-                    </th>
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">FACE</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Female</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Male</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      F</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      M</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Lip
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $10
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $15
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $40
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $60
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Lip</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
                   </tr>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Chin
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $10
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $15
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $40
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $60
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Chin</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
                   </tr>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Partial face
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $20
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $35
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $80
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $140
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Partial Face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$20</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$35</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$80</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$140</td>
                   </tr>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Full face
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $30
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $40
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $120
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $160
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Full face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$160</td>
                   </tr>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Hair line
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $25
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $30
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $100
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $120
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Hair line</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$25</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$100</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
                   </tr>
                   <tr class="border-b border-[#EAEAEA]">
-                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
-                      Ears
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $15
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $15
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $60
-                    </td>
-                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
-                      $60
-                    </td>
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Ears</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             <!-- Arms Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section2')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                LASER VEIN TREATMENTS
+              </h2>
+              <i id="icon-section2" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section2" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -463,7 +400,14 @@
             </div>
 
             <!-- Bikini Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section3')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                INJECTABLES PRICES
+              </h2>
+              <i id="icon-section3" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section3" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -558,7 +502,14 @@
             </div>
 
             <!-- Legs Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section4')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                SCULPTRA FOR FACE
+              </h2>
+              <i id="icon-section4" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section4" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -653,7 +604,14 @@
             </div>
 
             <!-- chest Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section5')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                SCULPTRA BUTT LIFT
+              </h2>
+              <i id="icon-section5" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section5" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -748,7 +706,15 @@
             </div>
 
             <!-- back Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section6')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                RADIESSE BUTT (PER VIAL)
+              </h2>
+              <i id="icon-section6" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+
+            <div id="section6" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -826,7 +792,14 @@
             </div>
 
             <!-- Touch Pricing Table -->
-            <div class="overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+            <button onclick="toggleSection('section7')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                THREAD LIFT
+              </h2>
+              <i id="icon-section7" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section7" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
               <table class="w-full min-w-[600px]">
                 <thead>
                   <tr class="border-b border-[#EAEAEA]">
@@ -903,142 +876,1047 @@
               </table>
             </div>
 
-            <div>
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  LASER VEIN TREATMENTS
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section8')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                SUN SPOT REMOVAL
+              </h2>
+              <i id="icon-section8" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section8" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">FACE</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Female</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Male</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      F</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Lip</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Chin</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Partial Face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$20</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$35</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$80</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$140</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Full face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$160</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Hair line</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$25</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$100</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Ears</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  INJECTABLES PRICES
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section9')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                COOLSCULPTING PRICES
+              </h2>
+              <i id="icon-section9" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section9" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      ARMS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Under arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $22
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $88
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Hands and fingers
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Fingers only
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  SCULPTRA FOR FACE
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section10')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                COOLTONE
+              </h2>
+              <i id="icon-section10" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section10" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      BIKINI
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $38
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $152
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Buttocks
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  SCULPTRA BUTT LIFT
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section11')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                PRP (PLATELET RICH PLASMA)
+              </h2>
+              <i id="icon-section11" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section11" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      LEGS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $150
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $170
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $600
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $680
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $85
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $340
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $400
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Feet and/or toes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  RADIESSE BUTT (PER VIAL)
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section12')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                LUMECCA IPL
+              </h2>
+              <i id="icon-section12" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section12" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[30px] font-playfair font-bold w-1/4">
+                      CHEST AND ABDOMEN
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper chest
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial chest
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full abdomen
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower abdomen
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  THREAD LIFT
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section13')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                MORPHEUS8
+              </h2>
+              <i id="icon-section13" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section13" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      BACK
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $155
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $18
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper back
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $78
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      --
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  SUN SPOT REMOVAL
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section14')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                FORMA
+              </h2>
+              <i id="icon-section14" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section14" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      TOUCH UP
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      5 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      10 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $60
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $240
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $240
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      15 minutes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $90
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $90
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $360
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $360
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  COOLSCULPTING PRICES
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section15')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                PEELS
+              </h2>
+              <i id="icon-section15" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section15" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">FACE</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Female</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Male</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      F</th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">Package of 5
+                      M</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Lip</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Chin</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$10</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Partial Face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$20</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$35</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$80</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$140</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Full face</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$40</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$160</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Hair line</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$25</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$30</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$100</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$120</td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">Ears</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$15</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">$60</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  COOLTONE
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section16')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                FACIALS
+              </h2>
+              <i id="icon-section16" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section16" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      ARMS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $320
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Under arms
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $22
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $88
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Hands and fingers
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Fingers only
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $10
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  PRP (PLATELET RICH PLASMA)
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section17')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                PICOSURE PRO SKIN REJUVANATION
+              </h2>
+              <i id="icon-section17" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section17" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      BIKINI
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $38
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $152
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Half bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $20
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $80
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Partial bikini
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $30
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $50
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $120
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $200
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Buttocks
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $35
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $40
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $140
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $160
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  LUMECCA IPL
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  MORPHEUS8
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  FORMA
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  PEELS
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  FACIALS
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  PICOSURE PRO SKIN REJUVANATION
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
-
-              <button
-                class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
-                <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
-                  TATTOO REMOVAL PRICE LIST
-                </h2>
-                <i class="fa-solid fa-angle-down text-3xl text-primary"></i>
-              </button>
+            <button onclick="toggleSection('section18')"
+              class="w-full flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 border-2 border-[#FFEBE8] my-4">
+              <h2 class="text-xl md:text-2xl lg:text-[32px] font-bold font-playfair text-start leading-tight">
+                TATTOO REMOVAL PRICE LIST
+              </h2>
+              <i id="icon-section18" class="fa-solid fa-angle-down text-3xl text-primary"></i>
+            </button>
+            <div id="section18" class="hidden overflow-x-auto rounded-xl border-2 border-[#FFEBE8] my-4">
+              <table class="w-full min-w-[600px]">
+                <thead>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <th class="text-left py-3 px-4 text-2xl md:text-[32px] font-playfair font-bold w-1/4">
+                      LEGS
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Female
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Male
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 F
+                    </th>
+                    <th class="text-right py-3 px-4 text-lg md:text-2xl font-playfair font-semibold w-1/6">
+                      Package of 5 M
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Full legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $150
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $170
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $600
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $680
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Upper legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $85
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $340
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $400
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Lower legs
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $75
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $95
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $300
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $380
+                    </td>
+                  </tr>
+                  <tr class="border-b border-[#EAEAEA]">
+                    <td class="py-3 px-4 text-base md:text-2xl font-roboto font-medium w-1/4">
+                      Feet and/or toes
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $25
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                    <td class="text-right py-3 px-4 text-base md:text-2xl font-roboto text-gray w-1/5">
+                      $100
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -1285,4 +2163,22 @@
       icon.classList.add("fa-bars", "text-[21px]", "text-[#333333]"); // Add old size and default color
     }
   });
+</script>
+
+<script>
+  function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    const icon = document.getElementById(`icon-${sectionId}`);
+
+    // Toggle visibility
+    if (section.classList.contains('hidden')) {
+      section.classList.remove('hidden');
+      icon.classList.remove('fa-angle-down');
+      icon.classList.add('fa-angle-up');
+    } else {
+      section.classList.add('hidden');
+      icon.classList.remove('fa-angle-up');
+      icon.classList.add('fa-angle-down');
+    }
+  }
 </script>

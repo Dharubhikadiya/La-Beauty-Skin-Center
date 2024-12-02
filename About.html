@@ -168,25 +168,28 @@
                 <div class="flex flex-col lg:flex-row items-center lg:gap-16 justify-center">
                     <!-- Images Container -->
                     <div class="w-full lg:w-1/2 relative">
-                        <!-- First Image -->
-                        <div class="relative rounded-3xl overflow-hidden">
-                            <img src="assets/images/journey1.png" alt="Facial Treatment" class="w-full">
+                        <!-- First Image with Scale Effect -->
+                        <div class="relative rounded-3xl overflow-hidden group">
+                            <img src="assets/images/journey1.png" alt="Facial Treatment"
+                                class="w-full transition-transform duration-300 transform group-hover:scale-105">
                         </div>
-                        <!-- Second Image -->
-                        <div class="absolute lg:bottom-[-80px] lg:right-[-7%] md:right-[10%] lg:right-[-5%] lg:translate-x-0 lg:translate-y-0 rounded-3xl overflow-hidden 
-                bottom-0 right-0 translate-x-[50%] translate-y-[50%] lg:block hidden">
-                            <img src="assets/images/journey2.png" alt="Beauty Treatment" class="w-full">
+                        <!-- Second Image with Scale Effect (Positioned Absolutely) -->
+                        <div
+                            class="absolute lg:bottom-[-80px] lg:right-[-7%] md:right-[10%] lg:right-[-5%] lg:translate-x-0 lg:translate-y-0 rounded-3xl overflow-hidden bottom-0 right-0 translate-x-[50%] translate-y-[50%] lg:block hidden group">
+                            <img src="assets/images/journey2.png" alt="Beauty Treatment"
+                                class="w-full transition-transform duration-300 transform group-hover:scale-105">
                         </div>
                     </div>
 
                     <!-- Stack Second Image for Small Screens -->
                     <div class="w-full lg:hidden">
-                        <div class="relative rounded-3xl overflow-hidden">
-                            <img src="assets/images/journey2.png" alt="Beauty Treatment" class="w-full">
+                        <div class="relative rounded-3xl overflow-hidden group">
+                            <img src="assets/images/journey2.png" alt="Beauty Treatment"
+                                class="w-full transition-transform duration-300 transform group-hover:scale-105">
                         </div>
                     </div>
 
-                    <!-- Content -->
+                    <!-- Content Section -->
                     <div class="w-full lg:w-1/2 lg:pt-0">
                         <h2
                             class="font-playfair text-4xl md:text-5xl lg:text-[60px] font-bold text-gray-800 leading-tight">
@@ -204,9 +207,11 @@
                                 <img src="assets/images/Right Icon.png" class="w-[30px] mt-1.5 flex-shrink-0" alt="">
                                 <p class="text-gray font-roboto text-base md:text-lg lg:text-[20px]">
                                     LA Beauty Skin Center is a professional medical spa, where we provide the most
-                                    advanced technologies with highest standards of service. We believe in modern world
-                                    beauty should be accessible to everyone, and we are striving to continue making it a
-                                    reality at our medical spa.
+                                    advanced
+                                    technologies with highest standards of service. We believe in modern world beauty
+                                    should be
+                                    accessible to everyone, and we are striving to continue making it a reality at our
+                                    medical spa.
                                 </p>
                             </div>
 
@@ -214,10 +219,13 @@
                                 <img src="assets/images/Right Icon.png" class="w-[30px] mt-1.5 flex-shrink-0" alt="">
                                 <p class="text-gray font-roboto text-base md:text-lg lg:text-[20px]">
                                     At LA Beauty Skin Center we offer state-of-the-art laser treatments, laser hair
-                                    removal, innovative aesthetic procedures, lip augmentation, non-surgical
-                                    rhinoplasty, rejuvenating injections with Juvederm and Radiesse, wrinkle prevention
-                                    and treatment with Botox and other neuromodulators, revitalizing facials, chemical
-                                    peels, facial and body sculpting.
+                                    removal,
+                                    innovative aesthetic procedures, lip augmentation, non-surgical rhinoplasty,
+                                    rejuvenating
+                                    injections
+                                    with Juvederm and Radiesse, wrinkle prevention and treatment with Botox and other
+                                    neuromodulators,
+                                    revitalizing facials, chemical peels, facial and body sculpting.
                                 </p>
                             </div>
 
@@ -225,13 +233,16 @@
                                 <img src="assets/images/Right Icon.png" class="w-[30px] mt-1.5 flex-shrink-0" alt="">
                                 <p class="text-gray font-roboto text-base md:text-lg lg:text-[20px]">
                                     We serve our clients with a superior level of professionalism, attention, medical
-                                    and personal care attuned to their unique requirements.
+                                    and personal
+                                    care
+                                    attuned to their unique requirements.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
 
 
         </section>
@@ -242,8 +253,9 @@
         <!-- injectors Section -->
         <section class="py-16">
             <div class="container mx-auto flex items-center justify-center">
-                <div class=" lg:w-7/12 gap-8 items-center relative" style="z-index: 999;">
-                    <div class="space-y-6 bg-white shadow-lg p-7 px-14 rounded-2xl">
+                <div class="lg:w-7/12 gap-8 items-center relative" style="z-index: 999;">
+                    <div
+                        class="space-y-6 bg-white shadow-lg p-7 px-14 rounded-2xl hover:shadow-2xl hover:scale-105 transition-transform duration-300">
                         <h2 class="font-playfair text-4xl md:text-5xl lg:text-[60px] font-bold text-gray-800 pb-3">Meet
                             the Masters</h2>
                         <span><img src="assets/images/gradiun line.png" alt="" class="pb-2"></span>
@@ -260,7 +272,7 @@
                             </div>
                             <div class="flex">
                                 <p class="text-gray font-roboto mb-2 flex text-[20px]">
-                                    Our team of highly trained and experienced physician assistants, registered nurses
+                                    Our team of highly trained and experienced physician assistants, registered nurses
                                     and aestheticians are there to
                                     support Dr. Karapetyan in bringing your most desired aesthetic needs to reality. The
                                     most welcoming front office staff
@@ -270,7 +282,7 @@
                             </p>
                         </div>
                         <button
-                            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+                            class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-300 mt-8 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-110">
                             <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
                                 <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
                             </div>
@@ -279,13 +291,15 @@
                     </div>
                     <img src="assets/images/dots.png" alt="" class="absolute top-0 right-0 hidden lg:block">
                 </div>
+
                 <div class="rounded-2xl lg:w-5/12 flex items-center justify-end">
                     <img src="assets/images/master.png" alt="Professional performing facial treatment"
-                        class="absolute right-[10%]" />
-
+                        class="absolute right-[10%] transition-transform duration-300 group-hover:scale-110">
                 </div>
             </div>
         </section>
+
+
 
         <section class="py-4 lg:py-12 overflow-x-hidden">
             <!-- Decorative Title -->

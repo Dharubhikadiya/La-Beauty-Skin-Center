@@ -154,34 +154,49 @@
       <div class="grid md:grid-cols-12 gap-8">
         <!-- Sidebar Navigation -->
         <nav class="md:col-span-4 space-y-2 px-2">
-          <div class="text-[24px] text-primary border-2 p-4 mb-3 font-roboto rounded-lg">
+          <div id="coolToneButton"
+            class="text-[24px] text-primary border-2 p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 cursor-pointer"
+            onclick="updateContent('Cool Tone', this)">
             Cool Tone
           </div>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
+          <button id="coolsculptingButton"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Coolsculpting', this)">
             Coolsculpting
           </button>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
+          <button id="sculptraButton"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Sculptra', this)">
             Sculptra
           </button>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
+          <button id="morpheus8Button"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Morpheus8', this)">
             Morpheus8
           </button>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
+          <button id="injectablesButton"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Injectables', this)">
             Injectables
           </button>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
-            laser hair removal for men
+          <button id="laserMenButton"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Laser hair removal for men', this)">
+            Laser hair removal for men
           </button>
-          <button class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg">
-            laser hair removal for Women
+          <button id="laserWomenButton"
+            class="w-full text-[24px] text-left text-gray bg-background p-4 mb-3 font-roboto rounded-lg hover:bg-primary hover:text-white transition duration-300 ease-in-out"
+            onclick="updateContent('Laser hair removal for Women', this)">
+            Laser hair removal for Women
           </button>
         </nav>
 
         <!-- Main Content -->
         <main class="md:col-span-8">
-          <div class="">
-            <!-- Cool Tone Header -->
-            <h2 class="font-playfair text-5xl lg:text-[60px] font-[700] relative inline-block px-4 pb-4">
+          <div>
+            <!-- Dynamic Header -->
+            <h2 id="headerTitle"
+              class="font-playfair text-5xl lg:text-[60px] font-[700] relative inline-block px-4 pb-4">
               Cool Tone
             </h2>
             <span><img src="assets/images/big gradiun line.png" alt="" class="px-4" /></span>
@@ -190,28 +205,44 @@
             <div class="grid md:grid-cols-12 flex items-start">
               <!-- Image -->
               <div class="md:col-span-6">
-                <img src="assets/images/cool tone img.png" alt="Cool Tone Treatment" class="w-full" />
+                <img src="assets/images/cool tone img.png" alt="Cool Tone Treatment"
+                  class="w-full h-auto object-cover transform transition duration-300 ease-in-out hover:scale-105" />
               </div>
 
               <!-- Pricing -->
-              <div class="md:col-span-6 px-4">
-                <div class="border border-b-[#DADADA] border-t-0 border-l-0 border-r-0 pb-5">
-                  <h3 class="text-3xl lg:text-[40px] font-[700] font-playfair pt-8">
-                    Package of 4 $1,200
-                  </h3>
-                </div>
-
-                <!-- <div class="mt-0 m-0 p-0"> -->
-                <h3 class="text-3xl lg:text-[40px] font-[700] font-playfair mb-2 mt-0 pt-0"
-                  style="margin: 12px 0px 0px">
+              <div class="md:col-span-6 px-4 py-6 border-t-0]">
+                <h3 class="text-3xl lg:text-[40px] font-[700] font-playfair pt-8 border-b border-[#d5d5d5] pb-7">
+                  Package of 4 $1,200
+                </h3>
+                <h3 class="text-3xl lg:text-[40px] font-[700] font-playfair mb-2 mt-5">
                   Package of 8 $2,000
                 </h3>
-                <!-- </div> -->
               </div>
             </div>
           </div>
         </main>
       </div>
+
+      <script>
+        // JavaScript to update the content and highlight the active button
+        function updateContent(contentTitle, button) {
+          // Update the header content dynamically
+          document.getElementById('headerTitle').innerText = contentTitle;
+
+          // Remove the active border from all buttons
+          let buttons = document.querySelectorAll('nav div, nav button');
+          buttons.forEach((btn) => {
+            btn.classList.remove('border-primary', 'bg-primary', 'text-white');
+            btn.classList.add('bg-background', 'text-gray');
+          });
+
+          // Add the active border to the clicked button
+          button.classList.add('border-primary', 'bg-primary', 'text-white');
+          button.classList.remove('bg-background', 'text-gray');
+        }
+      </script>
+
+
     </div>
 
     <!-- Blog Section -->
@@ -220,27 +251,32 @@
         <!-- Blog Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mb-12 mb-8">
           <!-- Blog Card 1 -->
-          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 mb-4">
-            <img src="assets/images/tattoo-removal.png" alt="Tattoo Removal" class="w-full h-68 object-cover" />
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 group">
+            <!-- Image with hover effect and gradient overlay -->
+            <div class="relative overflow-hidden">
+              <img src="assets/images/tattoo-removal.png" alt="Tattoo Removal"
+                class="w-full h-68 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity duration-300 group-hover:opacity-50">
+              </div>
+            </div>
+            <!-- Content Section -->
             <div class="p-6 pt-6">
               <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
                 <span
-                  class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-2 px-4 rounded-3xl">April
+                  class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-1 px-3 lg:py-2 lg:px-4 rounded-3xl">April
                   22, 2024</span>
-                <span class="text-[20px] font-roboto text-[400] text-gray-500"><i
-                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min
-                  Ago</span>
+                <span class="text-sm lg:text-[20px] font-roboto text-[400] text-gray-500">
+                  <i class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago
+                </span>
               </div>
-              <h2 class="text-[30px] font-bold mb-3">
+              <h2 class="text-xl lg:text-[30px] font-bold mb-3 leading-normal">
                 Does Tattoo Removal Work All Skin Types?
               </h2>
-              <p class="text-gray text-[20px] mb-4 font-roboto">
-                Does Tattoo Removal Work On All Skin Types?Yes, tattoo removal
-                generally works on <br />
-                all skin types.
+              <p class="text-gray text-sm lg:text-[20px] mb-4 font-roboto leading-normal">
+                Does Tattoo Removal Work On All Skin Types? Yes, tattoo removal generally works on <br> all skin types.
               </p>
-              <button
-                class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
+              <button class="flex items-center justify-center text-white font-semibold rounded-lg">
                 <div class="bg-[#FFE3DE] py-1 px-3 rounded-xl me-2">
                   <i class="fa-solid fa-angle-right text-primary"></i>
                 </div>
@@ -250,24 +286,31 @@
           </div>
 
           <!-- Blog Card 2 -->
-          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 mb-4">
-            <img src="assets/images/botox-neck.png" alt="Tattoo Removal" class="w-full h-68 object-cover" />
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 mb-4 group">
+            <!-- Image with hover effect and gradient overlay -->
+            <div class="relative overflow-hidden">
+              <img src="assets/images/botox-neck.png" alt="Botox Neck Lift"
+                class="w-full h-68 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity duration-300 group-hover:opacity-50">
+              </div>
+            </div>
+
+            <!-- Content Section -->
             <div class="p-6 pt-6">
               <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
                 <span
                   class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-2 px-4 rounded-3xl">April
                   22, 2024</span>
                 <span class="text-[20px] font-roboto text-[400] text-gray-500"><i
-                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min
-                  Ago</span>
+                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago</span>
               </div>
               <h2 class="text-[30px] font-bold mb-3">
                 Botox Neck Lift: What Is The Nefertiti Lift?
               </h2>
               <p class="text-gray text-[20px] mb-4 font-roboto">
-                Botox Neck Lift: What is the Nefertiti Lift? Egyptian Queen
-                Nefertiti was renowned for <br />
-                her beauty...
+                Botox Neck Lift: What is the Nefertiti Lift? Egyptian Queen Nefertiti was renowned for <br /> her
+                beauty...
               </p>
               <button
                 class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
@@ -280,23 +323,31 @@
           </div>
 
           <!-- Blog Card 3 -->
-          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 mb-4">
-            <img src="assets/images/laser-hair.png" alt="Tattoo Removal" class="w-full h-68 object-cover" />
+          <div class="bg-background rounded-xl overflow-hidden shadow-lg mx-4 mb-4 group">
+            <!-- Image with hover effect and gradient overlay -->
+            <div class="relative overflow-hidden">
+              <img src="assets/images/laser-hair.png" alt="Laser Hair Removal"
+                class="w-full h-68 object-cover transform transition-transform duration-300 group-hover:scale-110" />
+              <div
+                class="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-0 transition-opacity duration-300 group-hover:opacity-50">
+              </div>
+            </div>
+
+            <!-- Content Section -->
             <div class="p-6 pt-6">
               <div class="flex justify-between items-center mb-4 border-b pb-6 border-[#F5EBE9]">
                 <span
                   class="text-[14px] font-roboto text-[500] text-gray-500 bg-primary text-white py-2 px-4 rounded-3xl">April
                   22, 2024</span>
                 <span class="text-[20px] font-roboto text-[400] text-gray-500"><i
-                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min
-                  Ago</span>
+                    class="fa-solid fa-clock pe-2 text-primary"></i>6 min Ago</span>
               </div>
               <h2 class="text-[30px] font-bold mb-3">
                 Laser Hair Removal Areas : Where Does It Work Best?
               </h2>
               <p class="text-gray text-[20px] mb-4 font-roboto">
-                Laser Hair Removal Areas: Where Does It Work Best?Laser hair
-                removal is one of the most common cosmetic...
+                Laser Hair Removal Areas: Where Does It Work Best? Laser hair removal is one of the most common
+                cosmetic...
               </p>
               <button
                 class="flex items-center justify-center text-white font-semibold rounded-lg transition duration-300">
@@ -307,6 +358,7 @@
               </button>
             </div>
           </div>
+
         </div>
 
         <!-- View All Button -->

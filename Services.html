@@ -157,15 +157,17 @@
         <section class="bg-mainbackground py-6 lg:py-16 lg:mb-20">
             <div class="container mx-auto flex flex-col lg:flex-row items-center gap-8">
                 <!-- Image Section -->
-                <div class="w-full lg:w-1/2 flex flex-col items-center relative">
+                <div class="w-full lg:w-1/2 flex flex-col items-center relative group">
                     <!-- Main Image -->
-                    <img src="assets/images/Procedures1.png" alt="About Us Image" class="w-full max-w-[550px]">
+                    <img src="assets/images/Procedures1.png" alt="About Us Image"
+                        class="w-full max-w-[550px] transition-transform duration-300 group-hover:scale-110">
+
                     <!-- Overlapping Image -->
                     <img src="assets/images/Procedures2.png" alt="About Us Image"
-                        class="w-full max-w-[312px] absolute right-0 -bottom-20 hidden lg:block">
+                        class="w-full max-w-[312px] absolute right-0 -bottom-20 hidden lg:block transition-transform duration-300 group-hover:scale-110 group-hover:delay-300">
                     <!-- For smaller screens, stack images vertically -->
                     <img src="assets/images/Procedures2.png" alt="About Us Image"
-                        class="w-full max-w-[312px] block lg:hidden">
+                        class="w-full max-w-[312px] block lg:hidden transition-transform duration-300 group-hover:scale-110 group-hover:delay-300">
                 </div>
 
                 <!-- Text Content Section -->
@@ -185,10 +187,10 @@
                             alt="Right Icon">
                         <p class="text-gray font-roboto text-base md:text-lg lg:text-[20px]">
                             The most effective method of removing unwanted hair is laser hair removal treatment. Laser
-                            hair
-                            removal is cost-effective, non-invasive, painless, and efficient. Waxing and shaving can
-                            cost you
-                            thousands of dollars in the long run. Nonetheless, problematic hair will not disappear.
+                            hair removal is cost-effective, non-invasive, painless, and efficient. Waxing and shaving
+                            can
+                            cost you thousands of dollars in the long run. Nonetheless, problematic hair will not
+                            disappear.
                         </p>
                     </div>
 
@@ -230,13 +232,20 @@
                     </p>
                 </div>
                 <div class="flex">
-                    <div class="md:w-1/2   gap-0">
-                        <img src="assets/images/Treatment1.png" alt="">
+                    <!-- First Image -->
+                    <div class="md:w-1/2 gap-0 relative">
+                        <img src="assets/images/Treatment1.png" alt=""
+                            class="w-full transition-transform duration-300 hover:scale-110">
                     </div>
-                    <div class="md:w-1/2  gap-0">
-                        <img src="assets/images/Treatment2.png" alt="">
+
+                    <!-- Second Image -->
+                    <div class="md:w-1/2 gap-0 relative">
+                        <img src="assets/images/Treatment2.png" alt=""
+                            class="w-full transition-transform duration-300 hover:scale-110">
                     </div>
                 </div>
+
+
             </div>
         </section>
 
@@ -281,6 +290,7 @@
         </section>
 
         <!-- Skin Tightening Section -->
+        <!-- Skin Tightening Section -->
         <section class="bg-background py-16 relative overflow-hidden">
             <div class="container mx-auto px-4">
                 <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -306,18 +316,23 @@
                         </div>
                     </div>
                     <div class="rounded-2xl flex items-center lg:justify-end relative">
+                        <!-- Main image with rotation effect on hover -->
                         <img src="assets/images/Tightening2.png" alt="Professional performing facial treatment"
-                            class=" object-cover" style="z-index: 900;" />
+                            class="object-cover transition-all duration-300 ease-in-out hover:rotate-6 z-10" />
+                        <!-- Rangoli image remains in the background with no transformations -->
                         <img src="assets/images/rangoli right.png" alt="" class="absolute hidden lg:block"
-                            style="left: 10px;">
+                            style="left: 10px; z-index: 0;">
                     </div>
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8 flex items-center justify-center">
                     <div class="flex items-center lg:justify-start my-2 relative">
-                        <img src="assets/images/Tightening1.png" alt="" class="object-cover" style="z-index: 900;">
+                        <!-- Main image with rotation effect on hover -->
+                        <img src="assets/images/Tightening1.png" alt=""
+                            class="object-cover transition-all duration-300 ease-in-out hover:rotate-6 z-10" />
+                        <!-- Rangoli image remains in the background with no transformations -->
                         <img src="assets/images/rangoli left.png" alt="" class="absolute hidden lg:block"
-                            style="right: 15px;">
+                            style="right: 15px; z-index: 0;">
                     </div>
                     <div class="space-y-6">
                         <h1 class="text-4xl pb-4 lg:text-[60px] font-playfair font-bold text-gray-800 leading-tight">
@@ -384,16 +399,23 @@
                         </div>
                     </div>
                     <div class="rounded-2xl flex items-center justify-end relative">
+                        <!-- Main image with rotation effect on hover -->
                         <img src="assets/images/Tightening3.png" alt="Professional performing facial treatment"
-                            class="object-cover" style="z-index: 900;" />
+                            class="object-cover transition-all duration-300 ease-in-out hover:rotate-6 z-10" />
+                        <!-- Rangoli image remains in the background with no transformations -->
                         <img src="assets/images/rangoli right.png" alt="" class="absolute hidden lg:block"
-                            style="left: 15px;">
+                            style="left: 15px; z-index: 0;">
                     </div>
                 </div>
             </div>
             <img src="assets/images/flower bottel.png" alt=""
                 class="absolute max-w-[450px] right-0 bottom-[800px] z-[1000] hidden lg:block">
         </section>
+
+
+
+
+
 
         <!-- Contact Section -->
         <section class="py-16 px-4 md:px-8">
