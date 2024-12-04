@@ -83,8 +83,10 @@
               <a href="index.html" class="text-[#7F7F7F] hover:text-primary font-normal">Home</a>
               <a href="About.html" class="text-[#7F7F7F] hover:text-primary font-normal">About Us</a>
               <a href="Services.html" class="text-[#7F7F7F] hover:text-primary font-normal">Services</a>
-              <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price List</a>
-              <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly Specials</a>
+              <a href="Pricelist.html" class="text-[#7F7F7F] hover:text-primary font-normal">Price
+                List</a>
+              <a href="Monthlyspecials.html" class="text-[#7F7F7F] hover:text-primary font-normal">Monthly
+                Specials</a>
               <a href="Blog.html" class="text-[#7F7F7F] hover:text-primary font-normal">Blog</a>
               <a href="Contact.html" class="text-[#7F7F7F] hover:text-primary font-normal">Contact</a>
             </nav>
@@ -95,19 +97,25 @@
               </div>
               <a href="#contactform" class="transition duration-300">Online Appointment</a>
             </button>
+            <button id="mobile-menu-button" class="lg:hidden text-gray-600">
+              <i class="fa-solid fa-bars text-[21px] text-[#333333]"></i>
+            </button>
           </div>
           <div id="mobile-menu" class="hidden lg:hidden">
             <nav class="flex flex-col items-center space-y-4 py-4">
               <a href="index.html"
                 class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Home</a>
               <a href="About.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">About Us</a>
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">About
+                Us</a>
               <a href="Services.html"
                 class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Services</a>
               <a href="Pricelist.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Price List</a>
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Price
+                List</a>
               <a href="Monthlyspecials.html"
-                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Monthly Specials</a>
+                class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Monthly
+                Specials</a>
               <a href="Blog.html"
                 class="text-[#7F7F7F] text-[24px] py-1 font-[400] font-roboto  hover:text-primary">Blog</a>
               <a href="Contact.html"
@@ -129,7 +137,7 @@
             </p>
             <div class="flex sm:flex-row  sm:space-x-6 mb-[50px] lg:mb-[160px] items-center justify-start space-x-6">
               <button
-                class="hidden lg:flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
+                class="flex bg-primary items-center justify-between text-white font-semibold px-4 py-2 rounded-lg transition duration-300 hover:shadow-lg hover:scale-105">
                 <div class="bg-secondary py-1 px-3 rounded-lg me-2 transition duration-300">
                   <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
                 </div>
@@ -223,7 +231,7 @@
 
           <!-- Card 1 -->
           <div class="w-full sm:w-1/2 mb-4 lg:w-1/4 relative group px-2">
-            <div class="relative mx-auto overflow-hidden rounded-lg">
+            <div class="relative mx-auto overflow-hidden rounded-lg border-4 border-primary">
               <img src="assets/images/industry 1.png" alt="Service Image"
                 class="rounded-lg shadow-lg w-full transform transition-transform duration-300 group-hover:scale-110" />
               <div
@@ -291,7 +299,7 @@
           <img src="assets/images/skincare video.png" alt="" class="w-full h-auto">
           <div>
             <img src="assets/images/video icon.png" alt=""
-              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[10%] pointer-events-none">
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[10%] transform transition-transform duration-300 hover:scale-110">
           </div>
         </a>
       </div>
@@ -415,26 +423,30 @@
               <p class="text-gray-600">
               <div class="flex">
                 <span> <img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></span>
-                <p class="text-gray font-roboto mb-2 flex ps-3 lg:text-[20px]">
-                  LA Beauty Skin Center is home to Los Angeles’ best injectors providing innovative aesthetic procedures
-                  including lip injections, non-surgical rhinoplasty, anti-aging injections with dermal fillers, wrinkle
-                  prevention treatment with Botox and other neuromodulators.
-                </p>
+                <div class="text-gray font-roboto mb-2 flex-grow ps-3 lg:text-[20px]">
+                  LA Beauty Skin Center is home to Los Angeles' best injectors providing innovative aesthetic procedures
+                  including <u>lip injections,</u> non-surgical rhinoplasty, anti-aging injections with dermal fillers,
+                  wrinkle
+                  prevention treatment with <u>Botox</u> and other neuromodulators.
+                </div>
               </div>
               <div class="flex">
                 <p><img src="assets/images/Right Icon.png" class="max-w-[30px] mt-1"></p>
-                <p class="text-gray font-roboto mb-2 flex ps-3 lg:text-[20px]">
-                  At LA Beauty Skin Center we offer state-of-the-art laser treatments and laser hair removal, body
+                <div class="text-gray font-roboto mb-2 flex-grow ps-3 lg:text-[20px]">
+                  At LA Beauty Skin Center we offer state-of-the-art laser treatments and <u>laser hair removal,</u>
+                  body
                   sculpting
-                  with CoolSculpting, skin remodeling and resurfacing with IPL, Forma, and Morpheus 8. For skincare we
+                  with <u>CoolSculpting,</u> skin remodeling and resurfacing with IPL, <u>Forma,</u> and <u>Morpheus
+                    8.</u> For
+                  skincare we
                   offer
                   revitalizing facials, peels, microdermabrasion, and PRP.
-                </p>
+                </div>
               </div>
               </p>
             </div>
             <button
-              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-100 mt-8 md:ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
+              class="bg-primary flex items-center justify-center text-white font-semibold px-5 py-4 rounded-lg transition duration-100 mt-8 md:ms-4 ms-4 hover:border hover:border-1 hover:border-primary hover:bg-bthover hover:text-primary hover:shadow-sm hover:scale-100">
               <div class="bg-secondary py-1 px-3 rounded me-2 transition duration-300">
                 <i class="fa-solid fa-angle-right text-white transition duration-300"></i>
               </div>
@@ -454,8 +466,8 @@
           <div class="flex items-center lg:justify-start md:justify-center my-2 relative">
             <img src="assets/images/Removel-center.png" alt=""
               class="object-cover transition duration-300 transform hover:scale-110 hover:rotate-1"
-              style="z-index: 999;">
-            <img src="assets/images/video icon.png" alt="" class="absolute max-w-100 right-[50%]">
+              style="z-index: 100;">
+            <img src="assets/images/video icon.png" alt="" class="absolute max-w-100 right-[50%]" style="z-index: 999;">
             <img src="assets/images/rangoli left.png" alt="" class="absolute left-[67%] hidden lg:block">
           </div>
           <div>
@@ -466,10 +478,10 @@
               <p class="text-gray-600">
               <div class="flex">
                 <span> <img src="assets/images/Right Icon.png" class="max-w-[30px]"></span>
-                <p class="text-gray font-roboto flex ps-3 text-[20px]">
+                <p class="text-gray font-roboto flex-grow ps-3 text-[20px]">
                   Our full scope of medspa services range from skin remodeling to face sculpting with fillers and
                   injectables,
-                  from body sculpting to laser hair removal.
+                  from body sculpting to <u>laser hair removal.</u>
                 </p>
               </div>
               <div class="flex">
@@ -824,9 +836,9 @@
 
     <!-- Footer Section -->
     <footer class="bg-background pt-16 px-4 md:px-8 pb-4">
-      <div class="max-w-7xl mx-auto space-y-12">
+      <div class="container mx-auto space-y-12">
         <!-- Logo and Description -->
-        <div class="text-center">
+        <div class="text-center border-b pb-8 border-primary border-opacity-[20%]">
           <img src="assets/images/footer logo top.png" alt="LA Beauty Skin Center" class="mx-auto"
             style="width: 110px; height: 116px;">
           <img src="assets/images/footer logo bottom.png" alt="LA Beauty Skin Center" class="mx-auto"
@@ -952,4 +964,28 @@
     }
   });
 
+</script>
+<script>
+  // Initialize EmailJS
+  emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your Public Key
+
+  // Handle form submission
+  document.getElementById("inquiryForm").addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const formData = new FormData(event.target);
+
+    // Convert FormData to an object
+    const data = Object.fromEntries(formData.entries());
+
+    // Send the email using EmailJS
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", data)
+      .then(function (response) {
+        alert("Thank you! Your inquiry has been sent.");
+      }, function (error) {
+        alert("Failed to send inquiry. Please try again later.");
+        console.error("EmailJS Error:", error);
+      });
+  });
 </script>
